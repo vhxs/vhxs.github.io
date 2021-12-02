@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Hi, I'm Vikram Saraph! I'm into anything that's math, software, computers, or data. I am currently an applied researcher and software engineer at the Johns Hopkins Applied Physics Lab. Prior to this, I was a research scientist at Facebook AI Research (FAIR). Before that, I completed a PhD in computer science and a masters in mathematics at Brown University, and I hold a bachelors degree in the same two fields from the University of Notre Dame.
