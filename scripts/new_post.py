@@ -8,7 +8,7 @@ POSTS_DIR = '../docs/_posts/'
 
 date_today = datetime.today().strftime('%Y-%m-%d')
 
-if not argv[1]:
+if len(argv) <= 1:
     title = "New Post"
 else:
     title = argv[1]
@@ -22,6 +22,13 @@ if os.path.exists(path):
         exit()
 
 new_post = open(path, "w")
-new_post.write(f"---\nlayout: post\ntitle: {title}\ndate: {date_today}\ncategories: []\n---\n")
+new_post.write(f"---\n"
+    f"layout: post\n"
+    f"title: {title}\n"
+    f"date: {date_today}\n"
+    f"categories: []\n"
+    f"published: false\n"
+    f"---\n")
+
 new_post.write("\nThis is a new post.")
 new_post.close()
