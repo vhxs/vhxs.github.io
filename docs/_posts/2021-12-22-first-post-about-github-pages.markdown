@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "How to update this website"
+title:  "Notes about this blog"
 date:   2021-12-22 00:00:00 -0500
 categories: meta
 published: true
 ---
+
+As you can probably tell, this blog is very minimal. I am trying to strike the right balance between something that is presentable enough to show, and automated enough to lower the bar for my future self to get content out there, but not so overengineered that all my time is [wasted](https://xkcd.com/974/) [in](https://xkcd.com/1205/) [automation](https://xkcd.com/1319/). As has been observed by [others](view-source:https://danluu.com/writing-non-advice/), there are so many blogs out there that consist of just a single post about starting a blog and nothing more. I myself have been guilty of this more than once and hope that this iteration doesn't suffer the same fate. Different processes work for different people, and GitHub Pages and Jekyll with a few custom automation scripts to aid my workflow seems to be the sweet spot that I am content with.
 
 Jekyll is a static site generator. Github Pages has support for Jekyll and makes it really quick and easy to write blog posts like this. This blog was setup by following the tutorial [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll). Its source code is [here](https://github.com/vhxs/vhxs.github.io).
 
