@@ -13,11 +13,11 @@ if len(argv) <= 1:
 else:
     title = argv[1]
 
-name = f"{date_today}-{title.lower().replace(' ', '-')}.markdown"
+name = f"{date_today}-{title.lower().replace(' ', '-')}-draft.markdown"
 path = os.path.join(POSTS_DIR, name)
 
 if os.path.exists(path):
-    overwrite = input(f"{name} already exists, overwrite? (y/n)")
+    overwrite = input(f"{name} already exists, overwrite? (y/n) ")
     if overwrite != "y":
         exit()
 
