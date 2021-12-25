@@ -4,14 +4,14 @@ from datetime import datetime
 from sys import argv
 import os
 
-POSTS_DIR = '../docs/_posts/'
+POSTS_DIR = '../_posts/'
 
 date_today = datetime.today().strftime('%Y-%m-%d')
 
 if len(argv) <= 1:
     title = "New Post"
 else:
-    title = argv[1]
+    title = " ".join(argv[1:])
 
 name = f"{date_today}-{title.lower().replace(' ', '-')}-draft.markdown"
 path = os.path.join(POSTS_DIR, name)
