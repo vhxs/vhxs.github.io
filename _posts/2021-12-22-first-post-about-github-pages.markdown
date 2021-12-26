@@ -2,7 +2,7 @@
 layout: post
 title:  "Notes about this blog"
 date:   2021-12-22 00:00:00 -0500
-categories: meta
+tags: meta
 published: true
 ---
 

@@ -1,6 +1,7 @@
 # my stuff
 todo.yml
 _posts/*-draft.markdown
+.DS_Store
 
 # jekyll template
 _site/

@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3
-
 from datetime import datetime
 from sys import argv
 import os
@@ -26,7 +24,7 @@ new_post.write(f"---\n"
     f"layout: post\n"
     f"title: {title}\n"
     f"date: {date_today}\n"
-    f"categories: []\n"
+    f"tags: \n"
     f"published: false\n"
     f"---\n")
 
