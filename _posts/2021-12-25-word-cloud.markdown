@@ -3,7 +3,7 @@ layout: post
 title: Word clouds
 date: 2021-12-25
 tags: meta language visualization
-published: false
+published: true
 ---
 
 [Word clouds](https://en.wikipedia.org/wiki/Tag_cloud){:target="_blank"} seem like a fun thing to show people in a presentation, or in a blog post like this. They're one of probably several ways to summarize a set of documents, say if you're taking a first shot at exploratory data analysis of a text corpus that you don't anything about yet. I'm not sure I've seen word clouds online as often as I used to a few years ago when I was still in grad school, with [Google Trends](https://trends.google.com/trends/explore?date=all&geo=US&q=word%20cloud){:target="_blank"} supporting this hypothesis. Maybe because on their own they're not actually so useful beyond showing people a cool thing.
