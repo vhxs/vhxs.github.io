@@ -17,9 +17,10 @@ There's a [Python package](https://pypi.org/project/wordcloud/){:target="_blank"
 {% highlight python %}
 import os
 from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 
 BLOG_ROOT = os.getenv("BLOG_ROOT")
+if not BLOG_ROOT:
+    BLOG_ROOT = ".."
 POSTS_PATH = f"{BLOG_ROOT}/_posts/"
 ASSETS_PATH = f"{BLOG_ROOT}/assets/images/"
 
@@ -30,10 +31,7 @@ for filename in os.listdir(POSTS_PATH):
         all_text += open(os.path.join(POSTS_PATH, filename)).read()
 
 wordcloud = WordCloud(max_font_size=40).generate(all_text)
-plt.figure()
-plt.imshow(wordcloud, interpolation="bilinear")
-plt.axis("off")
-plt.savefig(os.path.join(ASSETS_PATH, "blog_wordcloud.png"))
+wordcloud.to_file(os.path.join(ASSETS_PATH, "blog_wordcloud.png"))
 {% endhighlight %}
 
 This script creates and saves an image in `assets/images`. Let's now embed the image, since I also want to know how to embed images:
