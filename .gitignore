@@ -4,6 +4,7 @@ _posts/*-draft.markdown
 .DS_Store
 
 # jekyll template
+_drafts/
 _site/
 .sass-cache/
 .jekyll-cache/

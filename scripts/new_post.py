@@ -2,17 +2,15 @@ from datetime import datetime
 from sys import argv
 import os
 
-POSTS_DIR = '../_posts/'
-
-date_today = datetime.today().strftime('%Y-%m-%d')
+DRAFTS_DIR = '../_drafts/'
 
 if len(argv) <= 1:
     title = "New Post"
 else:
     title = " ".join(argv[1:])
 
-name = f"{date_today}-{title.lower().replace(' ', '-')}-draft.markdown"
-path = os.path.join(POSTS_DIR, name)
+name = f"{title.lower().replace(' ', '-')}.markdown"
+path = os.path.join(DRAFTS_DIR, name)
 
 if os.path.exists(path):
     overwrite = input(f"{name} already exists, overwrite? (y/n) ")
@@ -23,7 +21,6 @@ new_post = open(path, "w")
 new_post.write(f"---\n"
     f"layout: post\n"
     f"title: {title}\n"
-    f"date: {date_today}\n"
     f"tags: \n"
     f"published: false\n"
     f"---\n")
