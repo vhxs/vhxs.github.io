@@ -10,7 +10,7 @@ export BLOG_ROOT=`pwd`
 python scripts/generate_cloud.py
 
 # build site
-bundle exec jekyll build --unpublished
+bundle exec jekyll build --unpublished --drafts
 
 # serve
-bundle exec jekyll serve --unpublished
+bundle exec jekyll serve --unpublished --drafts
