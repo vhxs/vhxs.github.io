@@ -15,7 +15,7 @@ As is typical in cryptography, assume we have two parties Alice and Bob, and sup
 
 That's all there is to it. The protocol assumes that Eve knows $$g \in \mathbb{Z}_n$$, and that Eve can also learn $$ag$$ and $$bg$$ by eavesdropping on communication between Alice and Bob, but even with this information computing $$a$$ or $$b$$ is still hard for Eve. This is because Eve has to solve the [discrete log problem](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography). All Eve sees are two random elements $$h, h' \in \mathbb{Z}_n$$, and knows $$g$$, so she must solve the equations $$h = xg$$ and $$h' = yg$$ to learn the generated secret. Cryptography works because of known hardness proofs, or strong evidence that certain problems are hard to solve, and the discrete log problem is *believed* to be a hard problem (though researchers don't seem to actually *know* much about [its hardness](https://cs.stackexchange.com/questions/113124/is-discrete-log-a-np-hard-problem){:target="_blank"}).
 
-Here's a quick implementation in Python, where Bob runs a TCP server in one thread[^1], and Alice a client in another thread, and Alice chooses $$\mathbb{Z}_100$$ and $$3$$ as a generator send to Bob. 
+Here's a quick implementation in Python, where Bob runs a TCP server in one thread[^1], and Alice a client in another thread, and Alice chooses $$\mathbb{Z}_{100}$$ and $$3$$ as a generator send to Bob. 
 
 {% highlight python %}
 import threading
