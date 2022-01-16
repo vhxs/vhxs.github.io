@@ -18,6 +18,10 @@ That's all there is to it. The protocol assumes that Eve knows $$g \in \mathbb{Z
 Here's a quick implementation in Python, where Bob runs a TCP server in one thread[^1], and Alice a client in another thread, and Alice chooses $$\mathbb{Z}_100$$ and $$3$$ as a generator send to Bob. 
 
 {% highlight python %}
+import threading
+import socket
+import random
+
 def alice():
     print("alice work up!")
 
