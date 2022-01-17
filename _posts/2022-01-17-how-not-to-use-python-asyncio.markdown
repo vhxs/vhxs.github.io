@@ -5,7 +5,7 @@ tags: python, concurrency, failure
 published: true
 ---
 
-I'm not sure how many people write about their failures, but I think there's value in doing so if you learned something in the process of failing. In this case, I tried to use Python's `asyncio` library to do something that would never work, but I also learned why.
+I'm not sure how many people write about their failures, but I think there's value in doing so if you learned something in the process of failing. In this case, I tried to use Python's `asyncio` library to do something that would never work, but I also learned *why* it wouldn't work.
 
 `asyncio` is a Python library used to write concurrent code, and just like JavaScript, uses the `async/await` syntax. Also as with JavaScript, node.js, and v8, `asyncio` runs code in a single thread. This might seem confusing at first if you've written multithreaded code, because what does concurrency mean in the context of a single thread?
 
@@ -71,7 +71,7 @@ waiting for connections...
 
 And the program stalls. The problem here is when Bob calls `sock.accept`. This function call is *blocking*, meaning that program execution does not proceed until a client requests to open a connection. However, by blocking at `sock.accept`, it blocks *the entire `asyncio` event loop*, including the code that Alice would execute the open a connection with Bob's server. So `sock.accept` deadlocks the entire program.
 
-The lesson here is avoid using blocking function calls in a single-threaded event loop like what's used in `asyncio`. `asyncio` has its own bindings for creating TCP connections and servers, though I haven't looked that deeply into it. Instead, to implement Diffie-Hellman key exchange, I opted to use Python's `threading` library, which supports honest-to-goodness multithreading.
+The lesson here is avoid using blocking function calls in a single-threaded event loop like what's used in `asyncio`. `asyncio` has its own bindings for creating TCP connections and servers, though I haven't looked that deeply into it. Instead, to implement Diffie-Hellman key exchange, I opted to use Python's `threading` library, which supports honest-to-goodness multithreading. Alice and Bob run their code in their own respective threads.
 
 [^1]: It's [this](https://justinpombrio.net/2020/01/25/concurrency.html) that really made me think about the utility of distinguishing between concurrency and parallelism: 
 [^2]: [Talk](https://go.dev/blog/waza-talk) by Rob Pike, one of the creators of golang, on concurrency.
