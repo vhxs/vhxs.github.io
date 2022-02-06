@@ -20,3 +20,4 @@ Updating this incrementally as I learn the quirks and ins and outs of Go. Maybe 
 - Arrays and slices. Slices is an odd name since I think of Python slices, but that's not really what they are at all. Arrays have a fixed length (this is *part* of variable typing), while slices do not. Difference in type annotation of arrays vs slices is only the constant that used to specify an array's length
 - There's some kind of case sensitivity when naming functions: functions exported from a package must start with an upper case letter.
 - The `defer` keyword in front of a function call executes that call at the end of the function block it's called it. It's sort of like a `finally` clause.
+- equals versus colon equals: https://stackoverflow.com/a/36513126/1411590
