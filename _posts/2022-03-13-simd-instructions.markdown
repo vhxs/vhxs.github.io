@@ -22,7 +22,7 @@ Challenge accepted
 It looks like ARM Neon is the name of the architecture extensions that provide SIMD on certain ARM processors including those on RPis. Let's see if we can find the relevant header file on my RPi.
 
 ```
-pi@raspberrypi:~ $ arm_neon.h
+pi@raspberrypi:~ $ mlocate arm_neon.h
 /usr/lib/gcc/aarch64-linux-gnu/8/include/arm_neon.h
 ```
 
