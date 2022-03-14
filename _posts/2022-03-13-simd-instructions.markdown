@@ -9,7 +9,7 @@ SIMD stands for single instruction, multiple data. This is a way of implementing
 
 Stackoverflow tech blog post about SIMD instructions: [link](https://stackoverflow.blog/2020/07/08/improving-performance-with-simd-intrinsics-in-three-use-cases/)
 
-Raspberry Pis are cheap devices that have most of the functionality of personal computers. They're used a lot for educational purposes. But they have a different architecture (they're ARM, not x86) that Intel processors, so they have a different instruction sets as well. This includes what SIMD instructions there are made available by the hardware and microarchitecture.
+Raspberry Pis are cheap devices that have most of the functionality of personal computers. They're used a lot for educational purposes. But they have a different architecture (they're ARM, not x86) than Intel processors, so they have a different instruction sets as well. This includes what SIMD instructions there are made available by the hardware and microarchitecture.
 
 ARM's tutorial on how to utilize SIMD:
 [link](https://developer.arm.com/documentation/102467/0100)
@@ -22,7 +22,7 @@ Challenge accepted
 It looks like ARM Neon is the name of the architecture extensions that provide SIMD on certain ARM processors including those on RPis. Let's see if we can find the relevant header file on my RPi.
 
 ```
-> mlocate arm_neon.h
+pi@raspberrypi:~ $ arm_neon.h
 /usr/lib/gcc/aarch64-linux-gnu/8/include/arm_neon.h
 ```
 
@@ -118,6 +118,6 @@ Interesting, so speedup keeps increasing past an array size of 8! What if we zoo
 
 So speedup reaches a bit over 10x, then drops off when the array size is 16. Moreover, speedup increases linearly until about an array size of 32, then falls again. This doesn't seem like a coincidence, considering peaks seem to occur around multiples of 16, which is the size of our vector registers. Each time we cross a multiple of 16, we need to use one more vector operation to process the entire array, though I don't know whether I have an explanation for why speedup drops all the way to 3-4x when this happens. I'm sure a computer architect would be able to provide a much more complete answer.
 
-In the above example, it's load and store operations that are vectorized, but there are also SIMD operations that vectorize arithimetic operations like addition. The second example on ARM's page is on [matrix multiplication](https://developer.arm.com/documentation/102467/0100/Matrix-multiplication-example). Vectorized matrix multiplcation looks like it uses `vfmaq_laneq_f32`, where `fma` stands for fused multiply-add, or any operation that can be written as $$a + (b \times c)$$. Dot products are multiplications followed by additions, so FMAs are convenient for implementing linear algebra functions. Libraries like `numpy` use vectorized FMA and other operations, as can be seen explicitly by looking at its source code here: [github code pointer](https://github.com/numpy/numpy/blob/623bc1fae1d47df24e7f1e29321d0c0ba2771ce0/numpy/core/src/common/simd/neon/arithmetic.h#L244).
+In the above example, it's load and store operations that are vectorized, but there are also SIMD operations that vectorize arithimetic operations like addition. The second example on ARM's page is on [matrix multiplication](https://developer.arm.com/documentation/102467/0100/Matrix-multiplication-example). Vectorized matrix multiplication looks like it uses `vfmaq_laneq_f32`, where `fma` stands for fused multiply-add, or any operation that can be written as $$a + (b \times c)$$. Dot products are multiplications followed by additions, so FMAs are convenient for implementing linear algebra functions. Libraries like `numpy` use vectorized FMA and other operations, as can be seen explicitly by looking at its source code here: [github code pointer](https://github.com/numpy/numpy/blob/623bc1fae1d47df24e7f1e29321d0c0ba2771ce0/numpy/core/src/common/simd/neon/arithmetic.h#L244).
 
 If I have time to return to screw around with more SIMD operations, it would be interesting to collect some performance numbers on SIMD'ized matrix multiplication and see whether they reflect what we saw with vectorized deinterleaving.
