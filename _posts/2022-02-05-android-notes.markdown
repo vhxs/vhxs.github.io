@@ -54,6 +54,6 @@ Definitely a nonexhaustive list:
 
 ### Bottom Line
 
-Android engineering is a full-time job and getting started properly requires a massive upfront time investment. This is because (1) Android is a relatively new technology, so its ecosystem is rapidly changing and has yet to stabilize and (2) compared with other software projects, Android development requires a very high amount of cognitive overhead to getting even the most minimal of applications off the ground. A "hello world" application can be implemented in almost any language in just one line, but an Android application is several hundreds of lines long.
+Android engineering is a full-time job and getting started properly requires a massive upfront time investment. This is because (1) Android is a relatively new technology, so its ecosystem is rapidly changing and has yet to stabilize and (2) compared with other software projects, Android development requires a very high amount of cognitive overhead to getting even the most minimal of applications off the ground. A "hello world" application can be implemented in almost any language in just one line, but an Android application is several hundreds of lines long because of the sheer amount of boilerplate code.
 
 I wouldn't call Android development hard, but it definitely requires a much higher level of time commitment to keep up with than other technologies.
