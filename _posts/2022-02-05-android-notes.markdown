@@ -5,13 +5,13 @@ tags: android, software
 published: true
 ---
 
-This is also a post I'll periodically update as I learn more.
+This is a post I'll periodically update as I learn more.
 
 Software is a fast moving target because computer systems are relatively easy to spin up, modify, and tear down, compared with aerospace (planes) or automotive (cars) systems that probably take years or decades to design, change, and deploy. It's automation that software enables that just makes stuff move fast.
 
-I've found this to be especially so with Android. The whole Android ecosystem is still so rapidly changing, so developing and maintaining a stable Android application requires *a lot* of time and attention, moreso than your typical software project. Suggested architectures and frameworks change as frequently as a few times a year. Frequenting the r/androiddev I've read many posts from developers sharing their frustration with the unstable platform.
+I've found this to be especially so with Android. The whole Android ecosystem is still so rapidly changing, so developing and maintaining a stable Android application requires *a lot* of time and attention, moreso than your typical software project. Suggested architectures and frameworks change as frequently as a few times a year. Frequenting the r/androiddev I've read many posts from developers sharing their frustration with the unstable platform and environment.
 
-Until my recent part-time involvement on an Android project, I hadn't had much of anything to do with Android, so I have learned all of this during my involvement on it. What follows are rough notes on what I've learned, and what I hope are future-proof suggestions on how to tackle learning about the Android ecosystem.
+Until my recent involvement on an Android project, I hadn't had much of anything to do with Android, so I have learned all of this in the process. What follows are rough notes on what I've learned, and what I hope will be future-proof suggestions on how to tackle learning about Android.
 
 ### What and how to learn
 
@@ -19,15 +19,17 @@ If you already know Java then you're already at a huge advantage, since Android 
 
 StackOverflow and Google are the most obvious places to go to search for how to do this or that in code. But because of how quickly Android has evolved, I've found that top search results more often than not provide wrong answers, since they're too dated. If I Google anything about Android, I make sure I restrict my searching to the last 1-2 years, and this usually works well enough.
 
-I've found it really helpful to just sequentially go through the Associate Android Developers Certification course material. Google started releasing this material sometime in 2020, though the content is still being updated. Browsing r/androiddev subreddit, even glancing at just the headlines, has also helped me mentally reinforce which frameworks are relevant today, and which are considered out of date.
+This blog on all things Android looks like a fantastic way to keep up with all the changes the Android constantly undergoes: [blog](https://commonsware.com/blog/archive.html)
+
+I've found it really helpful to just sequentially go through the Associate Android Developers Certification course material. Google started releasing this material sometime in 2020, though the content is still being updated. Browsing r/androiddev subreddit, even glancing at just the headlines, has also helped me mentally reinforce which frameworks/packages/architectures are relevant today, and which are considered dated.
 
 ### Development environment
 
-Use Android Studio (and avoid Eclipse). It's a free JetBrains product. JetBrains has some amazing, intuitive, shallow-learn-curve IDEs and this is absolutely one of them. It sets up a lot of boilerplate code, XML configurations, and build files for you.
+Use Android Studio (and avoid Eclipse). It's a free JetBrains product. JetBrains has some amazing, intuitive, shallow-learn-curve IDEs and this is absolutely one of them. It sets up a lot of boilerplate code, XML configurations, build files, etc for you.
 
 Android projects are built using the Gradle build system. Gradle build scripts can themselves be written in Groovy, Java, or Kotlin, though in my experience it's only worthwhile to learn what you need about Gradle, since the build system itself seems to be very complex.
 
-In contrast with developing an application to be deployed on a server, you don't really have a dev server on which you can build or test your application. Android Studio comes with an emulator, on which you can run your applications on various virtual devices. But if you're like me and want the satisfcation of seeing your application run on a real device, I would suggest getting a [Samsung Tab A7 Lite](https://www.samsung.com/us/mobile/tablets/buy/?modelCode=SM-T220NZAAXAR), I got one for only $120. People online only complain about application performance, but this doesn't matter a whole lot if you're developing only to learn. You can connect your device to your dev environment over USB.
+In contrast with developing an application to be deployed on a server, you don't really have a dev server on which you can build or test your application. Android Studio comes with an emulator. But if you're like me and need the satisfcation of seeing your application run on a real device, I would suggest getting a [Samsung Tab A7 Lite](https://www.samsung.com/us/mobile/tablets/buy/?modelCode=SM-T220NZAAXAR), I got one for only $120. People online only complain about application performance, but in my opinion this doesn't matter a whole lot if you're developing only to learn. You can connect your device to your dev server over USB.
 
 Gaining root access can be dicey. You *can* root your device, but by doing so you're probably going to void the warranty of whatever device you have, since you usually need to exploit a known vulnerability. Many devices don't seem to have official support for gaining root access, there isn't any `sudo` or `dsenableroot`. There are probably security reasons for this that I don't know much about.
 
@@ -37,7 +39,7 @@ Debugging an Android application can also be much slower than debugging any othe
 
 React Native seems to be a popular alternative to developing Android apps in Kotlin, but with the rise of WebAssembly and the industry trend to move
 
-### Core Concepts
+### A small subset of core concepts
 
 Definitely a nonexhaustive list:
 
