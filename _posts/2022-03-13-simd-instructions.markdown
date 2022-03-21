@@ -21,20 +21,20 @@ Challenge accepted
 
 It looks like ARM Neon is the name of the architecture extensions that provide SIMD on certain ARM processors including those on RPis. Let's see if we can find the relevant header file on my RPi.
 
-```
+{% highlight shell%}
 pi@raspberrypi:~ $ mlocate arm_neon.h
 /usr/lib/gcc/aarch64-linux-gnu/8/include/arm_neon.h
-```
+{% endhighlight %}
 
 So `arm_neon.h` exists as a header file on my RPi. AArch64 is (more or less, don't take my word for it) synonymous with ARM64, and `arm_neon.h` is C header file through which Neon intrinsics are accessible.
 
-```
+{% highlight C%}
 #include "arm_neon.h"
 
 int main(void) {
     return 0;
 }
-```
+{% endhighlight %}
 
 This program compiles successfully with `gcc`, so the header file was probably included successfully?
 
@@ -44,7 +44,7 @@ ARM's developer page linked above provides a couple of example functions that us
 
 and uses SIMD instructions as shown below to de-interleave the array:
 
-```
+{% highlight C%}
 void rgb_deinterleave_neon(uint8_t *r, uint8_t *g, uint8_t *b, uint8_t *rgb, int len_color) {
     /*
      * Take the elements of "rgb" and store the individual colors "r", "g", and "b"
@@ -58,7 +58,7 @@ void rgb_deinterleave_neon(uint8_t *r, uint8_t *g, uint8_t *b, uint8_t *rgb, int
         vst1q_u8(b+16*i, intlv_rgb.val[2]);
     }
 }
-```
+{% endhighlight %}
 
 Above, it looks to me like `vld3q_u8` loads three, 16-wide registers from a C array in memory (`v` for vector, `ld` for load, `3q` for 3 quad, and `u8` being type `uint8_t`). Similary, I think that `vst1q_u8` stores data from a single 16-wide register into a C array (`st` for store).
 
@@ -66,26 +66,26 @@ Here, the "single instruction"s being applied to "multiple data" are load and st
 
 The point of SIMD instructions and architectures are as another way of achieving parallelism through hardware that supports it, and so one would hope that they would observe some kind of speedup after vectorizing a function with SIMD. I took the example code from the ARM developer page, added a few time measurements (see code snippet [here](https://gist.github.com/vhxs/14526f782dc80f34158b79dd7cec738e) compiled with `gcc -o3 rgb.c -o exe_rgb_o3`), and checked whether I saw any speedup. On 500 RGB arrays each of size 3 x 65536, I get the following timing results:
 
-```
+{% highlight shell%}
 pi@raspberrypi:~ $ ./exe_rgb_o3 500 65536
 Without SIMD: 0.593816
 With SIMD: 0.180591
-```
+{% endhighlight %}
 
 So the SIMD implementation is a bit over 3x faster. Does this change at all if we remove the `O3` compiler optimization flag?
 
-```
+{% highlight shell%}
 pi@raspberrypi:~ $ gcc rgb.c -o exe_rgb
 pi@raspberrypi:~ $ ./exe_rgb 500 65536
 Without SIMD: 0.577297
 With SIMD: 0.182808
-```
+{% endhighlight %}
 
 Not really.
 
 How does this speedup vary as we vary the length of the RGB array? Using this script, let's try executing this code ranging over arrays of size 1 through 1048576, in powers of 2, and see what we get:
 
-```
+{% highlight python%}
 import subprocess
 import matplotlib.pyplot as plt
 
@@ -104,7 +104,7 @@ plt.xlabel("Array size")
 plt.ylabel("Speedup")
 plt.title("Speedup obtained from SIMD")
 plt.savefig("speedups.png")
-```
+{% endhighlight %}
 
 ![SIMD speedup](/assets/images/simd_speedups.png)
 
