@@ -12,6 +12,7 @@ I want to use this space as a form of public note taking to help hammer home con
 
 Stuff I like to read online:
 - [https://danluu.com/](https://danluu.com/){:target="_blank"}
+- [http://jdh.hamkins.org/](http://jdh.hamkins.org/){:target="_blank"}
 - [https://jeremykun.com/](https://jeremykun.com/){:target="_blank"}
 - [https://www.philipzucker.com/](https://www.philipzucker.com/){:target="_blank"}
 - [https://parentheticallyspeaking.org/](https://parentheticallyspeaking.org/){:target="_blank"}
