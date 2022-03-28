@@ -12,6 +12,7 @@ Updating this incrementally as I learn the quirks and ins and outs of Go. Maybe 
 - New systems being built using Go. This includes blockchains like Avalance, Algorand, and Ethereum. They all have popular clients implemented in Go
 - Go by example seems like a useful reference to learn how to do all the basic stuff you'd want to when learning a new programming language: https://gobyexample.com/
 - Start here if you want to build anything more complex than just "hello world": https://go.dev/doc/code. Really, otherwise your code will end up a mess.
+    - This also looks like a good reference for one-off Go scripts: https://www.wolfe.id.au/2020/03/10/starting-a-go-project/
 - Run Go code on a online REPL so you don't have to build a binary each time you want to run a code snippet https://go.dev/play/
 - Go only has `for` loops? So to write a `while (true) {...` loop in Go, we write `for {...`. Not very intuitive, but I guess it's more succinct?
 - Like in C, structs are a thing in Go
@@ -21,3 +22,4 @@ Updating this incrementally as I learn the quirks and ins and outs of Go. Maybe 
 - There's some kind of case sensitivity when naming functions: functions exported from a package must start with an upper case letter.
 - The `defer` keyword in front of a function call executes that call at the end of the function block it's called it. It's sort of like a `finally` clause.
 - equals versus colon equals: https://stackoverflow.com/a/36513126/1411590
+- Go natively supports complex numbers!: https://golangdocs.com/complex-numbers-in-golang That's neat.
