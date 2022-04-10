@@ -16,6 +16,7 @@ Updating this incrementally as I learn the quirks and ins and outs of Go. Maybe 
 - Run Go code on a online REPL so you don't have to build a binary each time you want to run a code snippet https://go.dev/play/
 - Go only has `for` loops? So to write a `while (true) {...` loop in Go, we write `for {...`. Not very intuitive, but I guess it's more succinct?
 - Like in C, structs are a thing in Go
+- Go also has pointers
 - Functions can have multiple return values, so no need to throw everything in a single struct if you need to return more than one thing
 - No try/catch/except. Instead, use multiple return, returning a value as well as an error. Error is the last return value
 - Arrays and slices. Slices is an odd name since I think of Python slices, but that's not really what they are at all. Arrays have a fixed length (this is *part* of variable typing), while slices do not. Difference in type annotation of arrays vs slices is only the constant that used to specify an array's length
@@ -23,3 +24,4 @@ Updating this incrementally as I learn the quirks and ins and outs of Go. Maybe 
 - The `defer` keyword in front of a function call executes that call at the end of the function block it's called it. It's sort of like a `finally` clause.
 - equals versus colon equals: https://stackoverflow.com/a/36513126/1411590
 - Go natively supports complex numbers!: https://golangdocs.com/complex-numbers-in-golang That's neat.
+- Everything in Go is technically pass-by-value: https://stackoverflow.com/questions/47296325/passing-by-reference-and-value-in-go-to-functions, you get the behavior of pass-by-reference by passing (by value) a pointer.
