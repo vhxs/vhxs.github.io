@@ -11,7 +11,7 @@ Software is a fast moving target because computer systems are relatively easy to
 
 I've found this to be especially so with Android. The whole Android ecosystem is still so rapidly changing, so developing and maintaining a stable Android application requires *a lot* of time and attention, moreso than your typical software project. Suggested architectures and frameworks change as frequently as a few times a year. Frequenting the r/androiddev I've read many posts from developers sharing their frustration with the unstable platform and environment.
 
-Until my recent involvement on an Android project, I hadn't had much of anything to do with Android, so I have learned all of this in the process. What follows are rough notes on what I've learned, and what I hope will be future-proof suggestions on how to tackle learning about Android.
+Until my recent involvement messing around with Android, I hadn't had much of anything to do with it, so I have learned all of this in the process. What follows are rough notes on what I've learned, and what I hope will be future-proof suggestions on how to tackle learning about Android. Provided you have enough time to build an app, doing so can be really satisfying.
 
 ### What and how to learn
 
@@ -54,6 +54,6 @@ Definitely a nonexhaustive list:
 
 ### Bottom Line
 
-Android engineering is a full-time job and getting started properly requires a massive upfront time investment. This is because (1) Android is a relatively new technology, so its ecosystem is rapidly changing and has yet to stabilize and (2) compared with other software projects, Android development requires a very high amount of cognitive overhead to getting even the most minimal of applications off the ground. A "hello world" application can be implemented in almost any language in just one line, but an Android application is several hundreds of lines long because of the sheer amount of boilerplate code.
+Any kind of software building requires lots of dwell time, but I've found this even more true of Android. Getting started properly requires a massive upfront time investment and you risk accumulating lots of technical debt if you don't have the chance to approach the process strategically. This is because (1) Android is a relatively new technology, so its ecosystem is rapidly changing and has yet to stabilize and (2) compared with other software projects, Android development requires a very high amount of cognitive overhead to getting even the most minimal of applications off the ground. A "hello world" application can be implemented in almost any language in just one line, but an Android application is several hundreds of lines long because of the sheer amount of boilerplate code.
 
-I wouldn't call Android development hard, but it definitely requires a much higher level of time commitment to keep up with than other technologies.
+I wouldn't call Android development hard, but it definitely requires a much higher level of time commitment to keep up with than other technologies. Still, building your own app can be a lot of fun.
