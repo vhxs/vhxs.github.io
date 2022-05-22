@@ -43,6 +43,6 @@ This list will grow as I come across more stuff.
 - Crypto stackexchange has a wealth of information on homomorphic encryption: https://crypto.stackexchange.com/questions/tagged/homomorphic-encryption
 - https://github.com/jonaschn/awesome-he
 
-[^1] Sort of like how it is theoretically possible to take any data structure with a sequential specification, and turn that into a wait-free linearizable data structure that can be concurrently accessed. But wait-free data structures are rarely used in practice since they're slow.
+[^1]: Sort of like how it is theoretically possible to take any data structure with a sequential specification, and turn that into a wait-free linearizable data structure that can be concurrently accessed. But wait-free data structures are rarely used in practice since they're slow.
 
-[^2] Grothendieck's algebraic geometry is probably a bit much to study, even if you want to go deep into the theoretical weeds of how homomorphic encryption works. You probably don't need to open Hartshorne to understand it.
+[^2]: Grothendieck's algebraic geometry is probably a bit much to study, even if you want to go deep into the theoretical weeds of how homomorphic encryption works. You probably don't need to open Hartshorne to understand it.
