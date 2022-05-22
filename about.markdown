@@ -21,3 +21,4 @@ Stuff I like to read online:
 - [https://scottaaronson.blog/](https://scottaaronson.blog/){:target="_blank"}
 - [https://xkcd.com/](https://xkcd.com/){:target="_blank"}
 - [https://www.hillelwayne.com/](https://www.hillelwayne.com/){:target="_blank"}
+- [http://concurrencyfreaks.blogspot.com/](http://concurrencyfreaks.blogspot.com/){:target="_blank"}
