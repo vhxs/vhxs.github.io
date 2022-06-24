@@ -16,7 +16,7 @@ Stuff I like to read online:
 - [https://jeremykun.com/](https://jeremykun.com/){:target="_blank"}
 - [https://www.philipzucker.com/](https://www.philipzucker.com/){:target="_blank"}
 - [https://parentheticallyspeaking.org/](https://parentheticallyspeaking.org/){:target="_blank"}
-- [http://www.paulgraham.com/](http://www.paulgraham.com/){:target="_blank"}
+- [http://www.paulgraham.com/](http://www.paulgraham.com/articles.html){:target="_blank"}
 - [https://blog.cloudflare.com/](https://blog.cloudflare.com/){:target="_blank"}
 - [https://scottaaronson.blog/](https://scottaaronson.blog/){:target="_blank"}
 - [https://xkcd.com/](https://xkcd.com/){:target="_blank"}
