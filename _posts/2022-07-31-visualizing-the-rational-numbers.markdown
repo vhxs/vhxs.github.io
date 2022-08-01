@@ -37,3 +37,9 @@ As complex numbers, the algebraics have real and imaginary parts, so can be draw
 This is how the visualization above is created. The size of the point is inversely proportional to the length of the polynomial it's a root of, and the color is determined by the degree of the polynomial. I drew roots for polynomials up to height $$12$$.
 
 [Vulkan](https://www.vulkan.org/) is the apparent successor to OpenGL and it seems like the consensus online now is to learn Vulkan if you want to get into computer graphics. It would be interesting to try rewriting this using Vulkan and see how far I get.
+
+Things that helped me do this:
+- [OpenGL book](https://learnopengl.com/book/book_pdf.pdf)
+- [Hello triangle in Golang](https://github.com/cstegel/opengl-samples-golang/blob/master/hello-triangle/hello_triangle.go) (Hello triangle is like the Hello world of graphics)
+- [Drawing circles using triangle fans](https://stackoverflow.com/questions/59468388/how-to-use-gl-triangle-fan-to-draw-a-circle-in-opengl)
+- [Coloring vertex array objects (VAOs) using shaders](https://mathweb.ucsd.edu/~sbuss/MathCG2/OpenGLsoft/SimpleDrawModern/explainSDM.html)
