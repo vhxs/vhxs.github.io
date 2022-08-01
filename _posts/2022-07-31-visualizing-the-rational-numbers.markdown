@@ -28,7 +28,7 @@ My source code here: [link](https://github.com/vhxs/algebraics-viz/blob/master/c
 
 ![almost bright lights](/assets/images/algebraics.png)
 
-Not too bad! The only things I'm missing here are correct texturing and the right zoom level.
+Not too bad! They almost look the same. The only things I'm missing here are correct texturing and the right zoom level.
 
 The algebraic numbers are dense in $$\mathbb{C}$$. More specifically, the algebraics are all those that are roots of some polynomial with integer coefficients. For example, $$\sqrt{2}$$ is [not rational](https://proofwiki.org/wiki/Square_Root_of_2_is_Irrational#:~:text=2%E2%88%96q2%E2%9F%B9,%E2%88%9A2%20cannot%20be%20rational.), but it is algebraic since it's a root of $$x^2 - 2$$. So is $$i$$ which is a root of $$x^2 + 1$$.
 
@@ -36,4 +36,4 @@ As complex numbers, the algebraics have real and imaginary parts, so can be draw
 
 This is how the visualization above is created. The size of the point is inversely proportional to the length of the polynomial it's a root of, and the color is determined by the degree of the polynomial. I drew roots for polynomials up to height $$12$$.
 
-[Vulkan](https://www.vulkan.org/) is the apparent successor to OpenGL and it seems like the consensus online now is to learn Vulkan if you want to get into computer graphics. It would be interesting to try rewriting this using Vulkan and seeing how far I get.
+[Vulkan](https://www.vulkan.org/) is the apparent successor to OpenGL and it seems like the consensus online now is to learn Vulkan if you want to get into computer graphics. It would be interesting to try rewriting this using Vulkan and see how far I get.
