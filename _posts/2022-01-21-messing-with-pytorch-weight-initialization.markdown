@@ -7,9 +7,7 @@ published: true
 
 See Jupyter notebook here[^1]: [notebook](https://github.com/vhxs/pytorch-playground/blob/master/pytorch_param_init.ipynb){:target="_blank"}
 
-Lately I've been following along with Andrew Ng's deeplearning.ai coursera specialization to beef up my ML creds. Last I took his online course was in 2014, and it's changed quite a lot since then, probably driven by how popular the deep learning frameworks have become in industry (hype or otherwise). Makes sense with software and machine learning continuing to eat the world.
-
-I worked at a company that profitably applies deep learning at massive scale, so his course material been fairly quick for me to go through. There's one particular thing though that caught my attention in Ng's video on Random Initialization in week 3 of Neural networks and deep learning.
+Lately I've been following along with Andrew Ng's deeplearning.ai coursera specialization to beef up my ML creds. Last I took his online course was in 2014, and it's changed quite a lot since then, probably driven by how popular the deep learning frameworks have become in industry (hype or otherwise). There's one particular thing though that caught my attention in Ng's video on Random Initialization in week 3 of Neural networks and deep learning.
 
 Ng mentions that if you initialize a fully connected network's weights all to the same values, then all weights in a given layer will be equal at each timestep, which isn't very useful since the goal is for neurons in a layer to "learn" something different from one another. This didn't seem obvious to me at first, but since there's nothting breaking the symmetry among neurons, what else would there really be to distinguish among then (quirks in software/hardware implementation maybe)? It's a classic symmetry argument that mathematicians use all the time and isn't all that deep (pun not originally intended?) if you think about it just a bit.
 
