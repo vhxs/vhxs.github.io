@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Homomorphic encryption notes
-tags: cryptography, rings, knowledge
+tags: cryptography, rings, encryption
 published: true
 ---
 
