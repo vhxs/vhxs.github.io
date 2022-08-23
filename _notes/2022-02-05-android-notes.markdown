@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My Adventures in Android Engineering
+title: Android notes
 tags: android, software
 published: true
 ---
