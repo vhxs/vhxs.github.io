@@ -10,7 +10,7 @@ I am an applied researcher and software engineer at the [Johns Hopkins Applied P
 
 I want to use this space as a form of public note taking to help hammer home concepts that I learn about, to show others what's top of mind, and as a kind of proof of knowledge (or, more likely, lack thereof?). As with any note taking, this blog's main purpose is help my future self so that I can recall what I've thought about in the past. So this will always be a continuous work in progress, though I sincerely hope that anyone else reading this may benefit from what I may write down. It's common knowledge that [posting wrong stuff on the Internet](https://xkcd.com/386/) is a great way to drive engagement, so if you come across any mistruths I may have written, please feel free to reach out to me.
 
-Stuff I like to read online:
+<!-- Stuff I like to read online:
 - [https://danluu.com/](https://danluu.com/){:target="_blank"}
 - [http://jdh.hamkins.org/](http://jdh.hamkins.org/){:target="_blank"}
 - [https://jeremykun.com/](https://jeremykun.com/){:target="_blank"}
@@ -23,4 +23,4 @@ Stuff I like to read online:
 - [https://www.hillelwayne.com/](https://www.hillelwayne.com/){:target="_blank"}
 - [http://concurrencyfreaks.blogspot.com/](http://concurrencyfreaks.blogspot.com/){:target="_blank"}
 
-My last.fm [music feed](https://github.com/vhxs/last-fm-feed)
+My last.fm [music feed](https://github.com/vhxs/last-fm-feed) -->
