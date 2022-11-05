@@ -6,7 +6,7 @@ tags: meta language visualization
 published: true
 ---
 
-[Word clouds](https://en.wikipedia.org/wiki/Tag_cloud){:target="_blank"} seem like a fun thing to show people in a presentation, or in a blog post like this. They're one of probably several ways to summarize a set of documents, say if you're taking a first shot at exploratory data analysis of a text corpus that you don't anything about yet. I'm not sure I've seen word clouds online as often as I used to a few years ago when I was still in grad school, with [Google Trends](https://trends.google.com/trends/explore?date=all&geo=US&q=word%20cloud){:target="_blank"} supporting this hypothesis. Maybe because on their own they're not actually so useful beyond showing people a cool thing.
+[Word clouds](https://en.wikipedia.org/wiki/Tag_cloud){:target="_blank"} seem like a fun thing to show people in a presentation, or in a blog post like this. They're one of probably several ways to visuallly summarize a set of documents, say if you're taking a first shot at exploratory data analysis of a text corpus that you don't anything about yet. I'm not sure I've seen word clouds online as often as I used to a few years ago when I was still in grad school, with [Google Trends](https://trends.google.com/trends/explore?date=all&geo=US&q=word%20cloud){:target="_blank"} supporting this hypothesis. Maybe because on their own they're not actually so useful beyond showing people a cool thing.
 
 Let's make a script that automatically generates a word cloud from my blog posts' content, each time I re-render the website. It probably won't look very interesting initially, but maybe it'll show me something I don't know about my writing style as I write more?
 
