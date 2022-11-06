@@ -10,6 +10,7 @@ github_username:  vhxs
 theme: minima
 plugins:
   - jekyll-feed
+  - jemoji
 markdown: kramdown
 kramdown:
   math_engine: katex

@@ -28,6 +28,8 @@ $$\displaystyle \int_{\partial \Omega} \omega = \int_\Omega d \omega$$
 
 I also want to include footnotes so here's a footnote[^1] on what I had to do to add LaTeX support.
 
+This blog now has :sparkles: *emojis* :sparkles: to spice things up! I installed `jemoji` using [these instructions](https://github.com/jekyll/jemoji).
+
 ## Domain name
 I registered the domain name vikramsaraph.com. I didn't know that Cloudflare was also a domain name registrar, but it was pretty cheap to buy the domain through them and also easy to direct vikramsaraph.com to vhxs.github.io through their dashboard. [These instructions](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/){:target="_blank"} came in handy. Apparently a domain name's registration information is publicly available via the `whois` protocol.
 
