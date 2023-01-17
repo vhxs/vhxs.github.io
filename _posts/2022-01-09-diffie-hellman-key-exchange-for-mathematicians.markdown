@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Diffie-Hellman Key Exchange for Mathematicians
+title: Diffie-Hellman Key Exchange
 date:   2022-01-09
 tags: cryptography, math
 published: true

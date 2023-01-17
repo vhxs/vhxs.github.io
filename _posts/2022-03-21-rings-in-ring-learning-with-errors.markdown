@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Rings used in Ring Learning with Errors
+title: The Rings in Ring Learning with Errors
 tags: rings rlwe sage
 published: true
 ---
