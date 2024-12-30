@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spindown Dice | Vikram Saraph</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" /> <link
+    rel="stylesheet" href="/css/fonts.css" /> 
+  </head>
+
+  
+  <body>
+    <div class="header">
+      <h1>Vikram Saraph</h1>
+      <nav>
+        <ul class="menu">
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/blog/">Blog</a></li>
+          
+          <li><a href="/tags/">Tags</a></li>
+          
+        </ul>
+      </nav></div
+    >
+  </body>
+  
+</html>
+
+
+<div class="content">
+  <div class="article-meta">
+    <h1><span class="title">Spindown Dice</span></h1>
+  </div>
+  <hr />
+  <main> <p>I&rsquo;ve recently been dabbling in Magic: The Gathering. <a href="https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/">It&rsquo;s a hard game</a> with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points.<br>
+An ordinary d20 doesn&rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. <a href="https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP">This blog post</a> talks more about spindown d20s.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2024/10/14/spindown-dice/dice.jpg"
+    alt="A spindown d20 (left) and a regular d20 (right)." width="40%"><figcaption>
+      <p>A spindown d20 (left) and a regular d20 (right).</p>
+    </figcaption>
+</figure>
+
+</div>
+<h2 id="simplicial-complexes-and-shellability">Simplicial complexes and shellability</h2>
+<p>A d20 is geometrically an icosahedron, which is one of <a href="https://en.wikipedia.org/wiki/Platonic_solid">five different Platonic solids</a>. The first thing I think of, though, when I see an icosahedron like a d20, is that it&rsquo;s a <a href="https://en.wikipedia.org/wiki/Simplicial_complex">simplicial complex</a>. In two and three dimensions, simplicial complexes are essentially shapes assembled from triangles (also called simplexes). Simplicial complexes generalize to higher dimensions, but that&rsquo;s outside the scope of this post.</p>
+<div class="image-wrapper" style="display: flex; justify-content: space-between;">
+  <figure><img src="/blog/2024/10/14/spindown-dice/example.png"
+      alt="An example simplicial complex I made in PowerPoint." width="50%"><figcaption>
+        <p>An example simplicial complex I made in PowerPoint.</p>
+      </figcaption>
+  </figure>
+
+  <figure><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/600-cell_tet_ring.png"
+      alt="An example I got from Wikipedia." width="50%"><figcaption>
+        <p>An example I got from <a href="https://en.wikipedia.org/wiki/Boerdijk%E2%80%93Coxeter_helix">Wikipedia</a>.</p>
+      </figcaption>
+  </figure>
+
+</div>
+<p>(If you&rsquo;re reading this and have better solutions for rendering or visualizing simplicial complexes, let me know, because I still haven&rsquo;t found anything satisfying to me. In this post, I&rsquo;ve used <a href="https://www.blender.org/">Blender</a>, PowerPoint, hand drawings, and physical objects to visualize them, and I&rsquo;ve previously used matplotlib as well.)</p>
+<p>I&rsquo;ve spent a lot of time studying simplicial complexes. And so to me, the spindown property of a d20 seems a whole lot like the <a href="https://en.wikipedia.org/wiki/Shelling_(topology)"><em>shellability</em></a> property of simplicial complexes, which informally states that a simplicial complex can be put together in a nice order. More specifically, imagine that we piece together the complex one triangle at a time. Then shellability requires that each time a new triangle is attached, the triangle must attach only along edges, not vertices. Topologists and combinatorialists care abou</p>
+<figure><img src="/blog/2024/10/14/spindown-dice/shellability.png"
+    alt="A shellable complex with a shelling order (left), and a complex that isn&rsquo;t shellable (right)." width="60%"><figcaption>
+      <p>A shellable complex with a shelling order (left), and a complex that isn&rsquo;t shellable (right).</p>
+    </figcaption>
+</figure>
+
+<p>I&rsquo;ve always been curious about why this property is called shellability, but I&rsquo;d guess it&rsquo;s meant as an analogy with <a href="https://images.squarespace-cdn.com/content/v1/50106d5684aed4702b7242ed/1586870153920-P3OAI3Y6LFCHM1QZV0S8/image-asset.jpeg">shelling an egg</a>. The faces of a spindown die are naturally ordered by the numbers 1 through 20, so we could &ldquo;shell&rdquo; the dice in this same order.<br>
+But is this actually a shelling order? The answer to this question is &ldquo;yes&rdquo;, and it&rsquo;s easy to see if one has a spindown d20 handy. Each time one attaches a triangle with the next number, one can verify that it attaches only along edges.</p>
+<p>One could be very patient and list all possible spindown orders of a d20 and check whether this is true. But
+there are many such spindown orders, and listing them all would be a challenge in itself. We&rsquo;re instead going to
+show
+by contradiction that all spindown orders are also shelling orders, by assuming that there&rsquo;s a spindown order on a
+d20 that
+isn&rsquo;t a shelling order.</p>
+<h2 id="spindown-orders-_are_-shelling-orders-on-a-d20">Spindown orders <em>are</em> shelling orders (&hellip;on a d20)</h2>
+<p>So suppose we have a spindown order that isn&rsquo;t a shelling order. Then in the spindown order, at some point, we must attach a triangle, calling it \(B\), that (1) <strong>attaches along a vertex</strong> so that shellability is violated. But being part of a spindown order, it must (2) <strong>also be attached to an edge of an existing triangle</strong> (calling this triangle \(A\)). Let&rsquo;s refer to the sequence of triangles we have already attached via spindown order as the <em>path</em> \(P\) that we&rsquo;ve built so far, up to and including \(A\) (but not \(B\)).</p>
+<figure><img src="/blog/2024/10/14/spindown-dice/path.png"
+    alt="An example path \(P\) (colored in red), and \(B\) in green." width="25%"><figcaption>
+      <p>An example path \(P\) (colored in red), and \(B\) in green.</p>
+    </figcaption>
+</figure>
+
+<p>An icosahedron is a regular polyhedron, which means that all faces are symmetric with one another. That means it doesn&rsquo;t matter which adjacent pair of triangles \(A\) and \(B\) we choose on the icosahedron to make our argument; they&rsquo;re all the same. Let \(v\) be the vertex that \(B\) intersects with, and consider all neighboring triangles (one of which is \(B\)).</p>
+<figure><img src="/blog/2024/10/14/spindown-dice/nbd.png"
+    alt="The neighborhood of \(v\) contains all possible next triangles for \(P\)." width="25%"><figcaption>
+      <p>The neighborhood of \(v\) contains all possible next triangles for \(P\).</p>
+    </figcaption>
+</figure>
+
+<p>Triangles \(X\) and \(Y\) could not already be in \(P\), otherwise \(B\) would not intersect \(P\) along a vertex. This leaves three possibilities: either \(C\), or \(D\), or both, are part of \(P\). We&rsquo;ll start with the case that \(C\) and \(D\) both belong to \(P\), and see that it&rsquo;s impossible to reach both \(X\) and \(Y\) while maintaining the spindown order property.</p>
+<p>The path \(P\) is itself a simplicial complex, and by our assumption that \(B\) is the <em>first</em> added triangle that violates shellability, \(P\) is shellable. As stated above, shellability gives us some nice properties, and in this case, it lets us prove that \(P\) is <a href="https://en.wikipedia.org/wiki/Contractible_space"><em>contractible</em></a>. Contractibility roughly means we can deform it into a point, or into other contractible shapes like a simple curve. Below is an example of how we can deform a path of triangles into a <a href="https://en.wikipedia.org/wiki/Polygonal_chain">piecewise linear curve</a>.</p>
+<figure><img src="/blog/2024/10/14/spindown-dice/deform_path.png"
+    alt="Deforming a path of triangles to a 1-dimensional curve." width="25%"><figcaption>
+      <p>Deforming a path of triangles to a 1-dimensional curve.</p>
+    </figcaption>
+</figure>
+
+<p>Similarly, the single triangle \(B\) can also be deformed to a line. The intersection of \(B\) and \(P\) is a line segment and a point, which deforms to two points. And the whole icosahedron can be deformed into a sphere. Visualizing all of this, we&rsquo;re basically creating a loop on the surface of the d20 at exactly the moment that \(B\) is added to \(P\).</p>
+<figure><img src="/blog/2024/10/14/spindown-dice/sphere.png"
+    alt="Adding \(B\) to \(P\) creates a topological loop on the surface of the d20." width="25%"><figcaption>
+      <p>Adding \(B\) to \(P\) creates a topological loop on the surface of the d20.</p>
+    </figcaption>
+</figure>
+
+<p>This loop cuts the sphere into two hemispheres, with \(X\) on one hemisphere and \(Y\) on the other. If we want to continue adding triangles to \(P\), we would either have to choose \(X\) or \(Y\), after which the other is unreachable. This means that \(P\) cannot be extended to a spindown order on the whole d20, which contradicts our initial assumption. Therefore all spindown orders must be shelling orders. We started with the assumption that \(C\) and \(D\) were both part of \(P\), but the same topological reasoning works if only one of them is part of \(P\).</p>
+<h2 id="spindown-orders-_are-not_-shelling-orders-generally">Spindown orders <em>are not</em> shelling orders (generally)</h2>
+<p>This begs the question: if we generalize the concept of &ldquo;spindown order&rdquo; to other simplicial complexes, are spindown orders <em>always</em> shelling orders? The answer to this is &ldquo;no&rdquo;, and a counterexample is a fairly simple triangulation of a square. Illustrated below are examples of a spindown order that isn&rsquo;t a shelling order, and also a shelling order that is not a spindown order.</p>
+<div class="image-wrapper" style="display: flex; justify-content: space-between;">
+  <figure><img src="/blog/2024/10/14/spindown-dice/shelling_not_spindown.png"
+      alt="Shelling order that isn&rsquo;t a spindown order." width="50%"><figcaption>
+        <p>Shelling order that isn&rsquo;t a spindown order.</p>
+      </figcaption>
+  </figure>
+
+  <figure><img src="/blog/2024/10/14/spindown-dice/spindown_not_shelling.png"
+      alt="Spindown order that isn&rsquo;t a shelling order." width="50%"><figcaption>
+        <p>Spindown order that isn&rsquo;t a shelling order.</p>
+      </figcaption>
+  </figure>
+
+</div>
+<p>In the above, the ordering on the left-hand side isn&rsquo;t a spindown order, since consecutive numbers aren&rsquo;t edge adjacent (for example, 12 and 13). The right-hand side isn&rsquo;t shellable because when we attach triangle 14, it intersects with the rest of the complex at the red vertex.</p>
+<p>The difference between this complex, versus the d20, is that in the above spindown order, we&rsquo;re able to trace along
+the boundary of the square when we create a loop, so we aren&rsquo;t actually separating the remaining space into two
+disconnected regions by attaching along a vertex. We can&rsquo;t do this with a sphere since it has no boundary.</p>
+<p>The argument above used reasoning specific to an icosahedron, though I think one can change this proof a bit to generalize to <em>any</em> triangulation of a sphere (an icosahedron is one of these). The argument above can also be made more rigorous by turning the handwaved &ldquo;deformations&rdquo; into actual <a href="https://mathworld.wolfram.com/HomotopyEquivalence.html">homotopy equivalences</a>.</p>
+<h2 id="can-we-use-a-computer-to-solve-this-problem">Can we use a computer to solve this problem?</h2>
+<p>I think this is reasonably doable, and I might update this post on another day with some code. <a href="https://www.sagemath.org/">SageMath</a> is a computer algebra system with a lot of useful mathematical features. It has <a href="https://doc.sagemath.org/html/en/reference/topology/sage/topology/simplicial_complex.html">simplicial complexes</a> implemented, and even a function that lets one instantiate the <a href="https://doc.sagemath.org/html/en/reference/topology/sage/topology/simplicial_complex_examples.html#sage.topology.simplicial_complex_examples.FareyMap">icosahedral complex</a> directly. It also lets one compute the flip graph of a simplicial complex. It has an extensive graph library, and includes a function that computes a Hamiltonian path for a given graph.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Hamiltonian_path">Hamiltonian path</a> of a graph is one that traverses all vertices in a graph exactly once, and a <a href="https://en.wikipedia.org/wiki/Flip_graph">flip graph</a> is a graph that encodes edge-adjacencies of the complex&rsquo;s faces. If you squint just a bit, you can see that a spindown order on a simplicial complex is &ldquo;just&rdquo; a Hamiltonian path on its flip graph.</p>
+<p>I would want to use SageMath to exhaustively (or, as exhaustively as we can) enumerate all Hamiltonian paths on the flip graph of the icosahedral complex (this is the dodecahedral graph; the icosahedron and dodecahedron are <a href="https://www.math.brown.edu/tbanchof/Beyond3d/chapter5/section03.html">dual</a>), and for each path, verify that it&rsquo;s a shelling order. This would be one way of brute-forcing an answer to the question: we&rsquo;d expect to find no counterexamples. At the very least, it would give one more confidence about the assertion that spindown orders on a d20 and shelling orders.</p>
+<p>One thing I&rsquo;m also curious about is whether the above proof can be formalized using a proof assistant such as <a href="https://lean-lang.org/">Lean</a>. The answer is probably &ldquo;yes&rdquo;, but doing so is well beyond my current level of expertise with proof assistants.</p>
+ </main>
+</div>
+
+<footer>
+  <div class="footer-links">
+    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2024
+    &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
+    <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
+    <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script
+    src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js"
+    defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+</div>
+</footer>
+</body>
+
+</html>

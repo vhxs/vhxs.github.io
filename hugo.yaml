@@ -1,0 +1,58 @@
+baseurl: "https://vikramsaraph.com/"
+languageCode: "en-us"
+title: "Vikram Saraph"
+theme: "ivxenz"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles: ["_cache$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  blog: "/blog/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Blog
+      url: "blog/"
+      weight: 2
+    - name: Tags
+      url: tags/
+      weight: 3
+
+params:
+  description: "Vikram's personal website and blog."
+  author: "Vikram Saraph"
+  yearStart: 2024
+  github: vhxs
+  linkedin: vsaraph
+  bluesky: vikramsaraph.com
+  favicon: https://upload.wikimedia.org/wikipedia/commons/e/e0/Aleph0.svg
+  highlight: true
+
+markup:
+  highlight:
+    codeFences: true
+    lineNumbers: true
+    style: "monokai"
+    inlineCode: true
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+
+taxonomies:
+  tag: tags
