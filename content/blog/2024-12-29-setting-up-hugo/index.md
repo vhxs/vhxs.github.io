@@ -94,7 +94,7 @@ I think this summarizes my changes to the original theme that I wanted to touch 
 
 ## Migrating my lonely blog post
 
-I had a single blog post that I needed to migrate. It's about dice. It was written in plain HTML and so migrating it to Markdown was a chore. This is one reason why SSGs are nice to use.
+I had a [single blog post](https://vikramsaraph.com/blog/2024/10/14/spindown-dice/) that I needed to migrate. It's about dice. It was written in plain HTML and so migrating it to Markdown was a chore. This is one reason why SSGs are nice to use.
 
 It was at the time of blog post migration that I realized I want to use [page bundles](https://gohugo.io/content-management/page-bundles/), which logically group Markdown content with associated resources such as images and video. This is what the directory structure looks like; I actually didn't have to change the theme or `hugo.yaml` to use page bundles:
 
