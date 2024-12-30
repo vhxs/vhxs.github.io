@@ -40,7 +40,7 @@ hugo server                 # build and serve the site
 
 The tutorial has you install a theme, specifically `ananke`, which itself lives on GitHub as a [separate repository](https://github.com/theNewDynamic/gohugo-theme-ananke). Roughly, Hugo will take content you write as Markdown files in the `content` directory, and render and style it using the theme that you have installed (or defined yourself).
 
-As I'd said earlier, I wasn't satisified with using a predefined theme, and I certainly didn't want to go with Hugo's default theme either. That meant I had to create a theme on my own, while takes ✨ _time_ ✨. I found a middle ground by looking for themes out there that I liked, and hacking on it to make it sufficiently my own.
+As I'd said earlier, I wasn't satisified with using a predefined theme, and I certainly didn't want to go with Hugo's default theme either. That meant I had to create a theme on my own, which takes ✨ _time_ ✨. I found a middle ground by looking for themes out there that I liked, and hacking on it to make it sufficiently my own.
 
 ## Finding a theme
 
