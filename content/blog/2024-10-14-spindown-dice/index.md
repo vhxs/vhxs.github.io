@@ -9,8 +9,7 @@ tags:
   - topology
 ---
 
-I've recently been dabbling in Magic: The Gathering. [It's a hard game](https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/) with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points.  
-An ordinary d20 doesn't have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. [This blog post](https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP) talks more about spindown d20s.
+I've recently been dabbling in Magic: The Gathering. [It's a hard game](https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/) with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points. An ordinary d20 doesn't have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. [This blog post](https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP) talks more about spindown d20s.
 
 <div style="text-align: center;">
 {{< figure src="dice.jpg" caption="A spindown d20 (left) and a regular d20 (right)." width="40%" >}}
@@ -27,7 +26,7 @@ A d20 is geometrically an icosahedron, which is one of [five different Platonic 
 
 (If you're reading this and have better solutions for rendering or visualizing simplicial complexes, let me know, because I still haven't found anything satisfying to me. In this post, I've used [Blender](https://www.blender.org/), PowerPoint, hand drawings, and physical objects to visualize them, and I've previously used matplotlib as well.)
 
-I've spent a lot of time studying simplicial complexes. And so to me, the spindown property of a d20 seems a whole lot like the [_shellability_](<https://en.wikipedia.org/wiki/Shelling_(topology)>) property of simplicial complexes, which informally states that a simplicial complex can be put together in a nice order. More specifically, imagine that we piece together the complex one triangle at a time. Then shellability requires that each time a new triangle is attached, the triangle must attach only along edges, not vertices. Topologists and combinatorialists care abou
+I've spent a lot of time studying simplicial complexes. And so to me, the spindown property of a d20 seems a whole lot like the [_shellability_](<https://en.wikipedia.org/wiki/Shelling_(topology)>) property of simplicial complexes, which informally states that a simplicial complex can be put together in a nice order. More specifically, imagine that we piece together the complex one triangle at a time. Then shellability requires that each time a new triangle is attached, the triangle must attach only along edges, not vertices. Topologists and combinatorialists care about shellable complexes since they are well-behaved and generally have other nice properties.
 
 {{< figure src="shellability.png" caption="A shellable complex with a shelling order (left), and a complex that isn't shellable (right)." width="60%" >}}
 
@@ -36,10 +35,8 @@ But is this actually a shelling order? The answer to this question is "yes", and
 
 One could be very patient and list all possible spindown orders of a d20 and check whether this is true. But
 there are many such spindown orders, and listing them all would be a challenge in itself. We're instead going to
-show
-by contradiction that all spindown orders are also shelling orders, by assuming that there's a spindown order on a
-d20 that
-isn't a shelling order.
+show by contradiction that all spindown orders are also shelling orders, by assuming that there's a spindown order on a
+d20 that isn't a shelling order.
 
 ## Spindown orders _are_ shelling orders (...on a d20)
 
