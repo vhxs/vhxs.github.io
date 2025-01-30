@@ -6,14 +6,21 @@
     <description>Recent content in Games on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/games/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An OEIS Sequence</title>
+      <link>http://localhost:1313/blog/2025/01/25/an-oeis-sequence/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2025/01/25/an-oeis-sequence/</guid>
+      <description>&lt;h2 id=&#34;what-is-oeis&#34;&gt;What is OEIS?&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://oeis.org/&#34;&gt;On-Line Rncyclopedia of Integer Sequences&lt;/a&gt; (OEIS) is exactly what it &lt;a href=&#34;https://oeis.org/listen.html&#34;&gt;sounds&lt;/a&gt; like: it’s a searchable database of interesting number sequences. It’s used by math researchers to discover sequences that they might encounter during their research, and it can help them find other relation sequences or relevant citations to published papers.&lt;/p&gt;&#xA;&lt;p&gt;Each entry in OEIS consists of several terms in the sequence, along with other associated data, like formulas or recurrence relations that define the sequence, programs that generate the sequence, and references to related OEIS sequences. &lt;a href=&#34;https://oeis.org/A000045&#34;&gt;Here&amp;rsquo;s the entry&lt;/a&gt; for the Fibonacci sequence. You can read more about OEIS on their &lt;a href=&#34;https://oeis.org/FAQ.html&#34;&gt;FAQ page&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Spindown Dice</title>
       <link>http://localhost:1313/blog/2024/10/14/spindown-dice/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/2024/10/14/spindown-dice/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently been dabbling in Magic: The Gathering. &lt;a href=&#34;https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/&#34;&gt;It&amp;rsquo;s a hard game&lt;/a&gt; with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points.&lt;br&gt;&#xA;An ordinary d20 doesn&amp;rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. &lt;a href=&#34;https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP&#34;&gt;This blog post&lt;/a&gt; talks more about spindown d20s.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently been dabbling in Magic: The Gathering. &lt;a href=&#34;https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/&#34;&gt;It&amp;rsquo;s a hard game&lt;/a&gt; with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points. An ordinary d20 doesn&amp;rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. &lt;a href=&#34;https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP&#34;&gt;This blog post&lt;/a&gt; talks more about spindown d20s.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

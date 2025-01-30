@@ -48,8 +48,7 @@
     <h1><span class="title">Spindown Dice</span></h1>
   </div>
   <hr />
-  <main> <p>I&rsquo;ve recently been dabbling in Magic: The Gathering. <a href="https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/">It&rsquo;s a hard game</a> with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points.<br>
-An ordinary d20 doesn&rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. <a href="https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP">This blog post</a> talks more about spindown d20s.</p>
+  <main> <p>I&rsquo;ve recently been dabbling in Magic: The Gathering. <a href="https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/">It&rsquo;s a hard game</a> with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points. An ordinary d20 doesn&rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. <a href="https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP">This blog post</a> talks more about spindown d20s.</p>
 <div style="text-align: center;">
 <figure><img src="/blog/2024/10/14/spindown-dice/dice.jpg"
     alt="A spindown d20 (left) and a regular d20 (right)." width="40%"><figcaption>
@@ -75,7 +74,7 @@ An ordinary d20 doesn&rsquo;t have consecutive numbers adjacent to one another, 
 
 </div>
 <p>(If you&rsquo;re reading this and have better solutions for rendering or visualizing simplicial complexes, let me know, because I still haven&rsquo;t found anything satisfying to me. In this post, I&rsquo;ve used <a href="https://www.blender.org/">Blender</a>, PowerPoint, hand drawings, and physical objects to visualize them, and I&rsquo;ve previously used matplotlib as well.)</p>
-<p>I&rsquo;ve spent a lot of time studying simplicial complexes. And so to me, the spindown property of a d20 seems a whole lot like the <a href="https://en.wikipedia.org/wiki/Shelling_(topology)"><em>shellability</em></a> property of simplicial complexes, which informally states that a simplicial complex can be put together in a nice order. More specifically, imagine that we piece together the complex one triangle at a time. Then shellability requires that each time a new triangle is attached, the triangle must attach only along edges, not vertices. Topologists and combinatorialists care abou</p>
+<p>I&rsquo;ve spent a lot of time studying simplicial complexes. And so to me, the spindown property of a d20 seems a whole lot like the <a href="https://en.wikipedia.org/wiki/Shelling_(topology)"><em>shellability</em></a> property of simplicial complexes, which informally states that a simplicial complex can be put together in a nice order. More specifically, imagine that we piece together the complex one triangle at a time. Then shellability requires that each time a new triangle is attached, the triangle must attach only along edges, not vertices. Topologists and combinatorialists care about shellable complexes since they are well-behaved and generally have other nice properties.</p>
 <figure><img src="/blog/2024/10/14/spindown-dice/shellability.png"
     alt="A shellable complex with a shelling order (left), and a complex that isn&rsquo;t shellable (right)." width="60%"><figcaption>
       <p>A shellable complex with a shelling order (left), and a complex that isn&rsquo;t shellable (right).</p>
@@ -86,10 +85,8 @@ An ordinary d20 doesn&rsquo;t have consecutive numbers adjacent to one another, 
 But is this actually a shelling order? The answer to this question is &ldquo;yes&rdquo;, and it&rsquo;s easy to see if one has a spindown d20 handy. Each time one attaches a triangle with the next number, one can verify that it attaches only along edges.</p>
 <p>One could be very patient and list all possible spindown orders of a d20 and check whether this is true. But
 there are many such spindown orders, and listing them all would be a challenge in itself. We&rsquo;re instead going to
-show
-by contradiction that all spindown orders are also shelling orders, by assuming that there&rsquo;s a spindown order on a
-d20 that
-isn&rsquo;t a shelling order.</p>
+show by contradiction that all spindown orders are also shelling orders, by assuming that there&rsquo;s a spindown order on a
+d20 that isn&rsquo;t a shelling order.</p>
 <h2 id="spindown-orders-_are_-shelling-orders-on-a-d20">Spindown orders <em>are</em> shelling orders (&hellip;on a d20)</h2>
 <p>So suppose we have a spindown order that isn&rsquo;t a shelling order. Then in the spindown order, at some point, we must attach a triangle, calling it \(B\), that (1) <strong>attaches along a vertex</strong> so that shellability is violated. But being part of a spindown order, it must (2) <strong>also be attached to an edge of an existing triangle</strong> (calling this triangle \(A\)). Let&rsquo;s refer to the sequence of triangles we have already attached via spindown order as the <em>path</em> \(P\) that we&rsquo;ve built so far, up to and including \(A\) (but not \(B\)).</p>
 <figure><img src="/blog/2024/10/14/spindown-dice/path.png"
@@ -152,7 +149,7 @@ disconnected regions by attaching along a vertex. We can&rsquo;t do this with a 
 
 <footer>
   <div class="footer-links">
-    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2024
+    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2025
     &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
     <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
     <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>

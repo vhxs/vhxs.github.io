@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Combinatorics</title>
+      <link>http://localhost:1313/tags/combinatorics/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/combinatorics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Games</title>
+      <link>http://localhost:1313/tags/games/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/games/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oeis</title>
+      <link>http://localhost:1313/tags/oeis/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/oeis/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Css</title>
       <link>http://localhost:1313/tags/css/</link>
@@ -34,20 +55,6 @@
       <link>http://localhost:1313/tags/website/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/website/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Combinatorics</title>
-      <link>http://localhost:1313/tags/combinatorics/</link>
-      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/combinatorics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Games</title>
-      <link>http://localhost:1313/tags/games/</link>
-      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/games/</guid>
       <description></description>
     </item>
     <item>
