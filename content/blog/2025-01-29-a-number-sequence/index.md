@@ -136,7 +136,7 @@ If you caught my pun in the very first sentence of this post, it's that OEIS has
 {{< figure src="oeis_play.png" caption="Knobs available to produce a MIDI file." width="50%" >}}
 </div>
 
-It lets you download music in [MIDI format](https://cecm.indiana.edu/361/midi.html), meaning you can open and edit it in music composition software like GarageBand or [Musescore](https://github.com/musescore/MuseScore). Here's a [MIDI](phi.midi) for [Euler's phi](https://en.wikipedia.org/wiki/Euler%27s_totient_function) function. It sounds really weird. Here's in an .mp3 of it so you can listen to it directly in the browser:
+It lets you download music in [MIDI format](https://cecm.indiana.edu/361/midi.html), meaning you can open and edit it in music composition software like GarageBand or [MuseScore](https://github.com/musescore/MuseScore). Here's a [MIDI](phi.midi) for [Euler's phi](https://en.wikipedia.org/wiki/Euler%27s_totient_function) function. It sounds really weird. Here's in an .mp3 of it so you can listen to it directly in the browser:
 
 <div style="display: flex; justify-content: center;">
     <audio controls preload="auto">
