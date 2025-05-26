@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visualizing the Algebraic Numbers | Vikram Saraph</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" /> <link
+    rel="stylesheet" href="/css/fonts.css" /> 
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e0/Aleph0.svg" type="image/x-icon" />
+
+
+  </head>
+
+  
+  <body>
+    <div class="header">
+      <h1>Vikram Saraph</h1>
+      <nav>
+        <ul class="menu">
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/blog/">Blog</a></li>
+          
+          <li><a href="/tags/">Tags</a></li>
+          
+        </ul>
+      </nav></div
+    >
+  </body>
+  
+</html>
+
+
+<div class="content">
+  <div class="article-meta">
+    <h1><span class="title">Visualizing the Algebraic Numbers</span></h1>
+  </div>
+  <hr />
+  <main> <h2 id="what-are-the-algebraic-numbers">What are the Algebraic Numbers?</h2>
+<p>The <a href="https://mathworld.wolfram.com/AlgebraicNumber.html">algebraic numbers</a> are complex numbers that are solutions of polynomial equations with integer coefficients. For example, \(\sqrt{2} \) is algebraic because it satisfies \( x^2 - 2 = 0 \), while the number \( \pi \) is not algebraic (it&rsquo;s <a href="https://en.wikipedia.org/wiki/Transcendental_number">transcendental</a>) since it&rsquo;s not a root of any integer polynomial you can imagine. They form a subfield of the complex numbers, so they&rsquo;re closed under addition, subtraction, multiplication, and division. Furthermore, the rational numbers are a subfield of the algebraic numbers, since the rational number \( a / b \) is a root of the linear integer polynomial \( bx - a = 0 \).</p>
+<p>You&rsquo;d probably learn about the algebraic numbers when taking an advanced undergraduate course in abstract algebra. That&rsquo;s when I learned about them, and I was particularly fascinated by them after seeing <a href="https://en.wikipedia.org/wiki/Algebraic_number#/media/File:Algebraicszoom.png">this cool visualization of them on Wikipedia</a>. Generally speaking, there isn&rsquo;t a straightfoward way to visualize them; for example, if you drew a dot at each algebraic number on the complex plane, you&rsquo;d fill up
+the whole plane, since algebraic numbers are <a href="https://en.wikipedia.org/wiki/Dense_set"><em>dense</em></a> in the complex numbers. And that wouldn&rsquo;t make for a very interesting visualization, would it?</p>
+<p><a href="https://en.wikipedia.org/wiki/User:Stephen_J._Brooks">Stephen J. Brooks</a>, the Wikipedia user who developed this visualization, decided to do something much more creative instead. A snippet of the C and OpenGL source code used to create the visualization is included in the image&rsquo;s <a href="https://en.wikipedia.org/wiki/User:Stephen_J._Brooks/algebraics/src">metadata</a>, though it&rsquo;s not self-contained enough to just copy, compile, and run, and it&rsquo;s light on details of what the code is doing or how it works.</p>
+<p>This blog post is my attempt at demystifying the original visualization by rewriting the code in Python, and explaining here the math involved and how the math is translated into code. The code I wrote which I&rsquo;ll reference in this post is <a href="https://github.com/vhxs/algebraics-viz">here</a>.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/04/12/visualizing-the-algebraic-numbers/example.png"
+    alt="Example output from my application. Continue on to read more about what this is." width="80%"><figcaption>
+      <p>Example output from my application. Continue on to read more about what this is.</p>
+    </figcaption>
+</figure>
+
+</div>
+<h2 id="elsewhere-on-the-internet-related-work">Elsewhere on the Internet (Related Work)</h2>
+<p>I&rsquo;m not the first one to visualize the algebraic numbers or even attempt to reverse engineer Brooks&rsquo; visualization, so I&rsquo;m including a related work section with content I found (sort of like how one would do with a peer-reviwed publication) while scouring the depths of the Internet for what else is online.</p>
+<p>Brooks&rsquo; original code snippet is <a href="https://en.wikipedia.org/wiki/User:Stephen_J._Brooks/algebraics/src">here</a>. In 2013, his visualization was the <a href="https://blogs.ams.org/visualinsight/2013/09/01/algebraic-numbers/">subject of <em>Visual Insights</em></a>, a now-defunct (as of 2021) <a href="https://blogs.ams.org/visualinsight/about-visual-insight/">blog series</a> published on <a href="https://blogs.ams.org/">The American Mathematical Society&rsquo;s website</a> and edited by mathematician <a href="https://math.ucr.edu/home/baez/">John Baez</a>. In his post, he describes what&rsquo;s in the visualization and also cites another blogger&rsquo;s code, <a href="https://www.mathandcode.com/">David Moore</a>, who&rsquo;d taken Brooks&rsquo; original code and turned it into a desktop application written in C. Moore&rsquo;s code is <a href="https://sourceforge.net/projects/algebraicnumbers/">available on Sourceforge</a>, though it wasn&rsquo;t self-contained enough for me to quickly determine how to build it without investing more time.</p>
+<p>If you look up &ldquo;algebraic number visualization&rdquo; in a search engine, you&rsquo;ll also find this set of visualizations <a href="https://im.icerm.brown.edu/portfolio/visualizing-algebraic-numbers/">posted on <em>Illustrating Mathematics</em></a>, a <a href="https://im.icerm.brown.edu/">blog on ICERM&rsquo;s website</a> with lots of neat mathematical art and visuals. They look similar to Brooks&rsquo; visualization, though unfortunately there isn&rsquo;t source code obviously posted anywhere online for these ones.</p>
+<div class="image-wrapper" style="display: flex; justify-content: space-evenly; align-items: flex-end;">
+  <figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Algebraicszoom.png"
+      alt="Brooks&rsquo; visualization of the algebraic numbers on Wikipedia" width="100%"><figcaption>
+        <p>Brooks&rsquo; visualization of the algebraic numbers on Wikipedia</p>
+      </figcaption>
+  </figure>
+
+  <figure><img src="https://i0.wp.com/im.icerm.brown.edu/wp-content/uploads/2019/12/image4-3.png?w=1727&amp;ssl=1"
+      alt="A visualizations of the algebraic numbers on ICERM&rsquo;s blog" width="70%"><figcaption>
+        <p>A visualizations of the algebraic numbers on ICERM&rsquo;s blog</p>
+      </figcaption>
+  </figure>
+
+</div>
+<p>I myself have known about Brooks&rsquo; visualization since learning about the algebraic numbers in 2011, and in summer of 2022 when I had ample free time but less focused of a career direction, I decided to recreate the visualization in <a href="https://go.dev/">Go</a> as reason to learn a new language. In the process, I also learned the minimum amount of <a href="https://www.opengl.org/">OpenGL</a> I needed to know to (mostly) successfully rewrite it. Looking back, the code isn&rsquo;t very well structued, but it works. I left the Go code I wrote intact on a separate branch of my Python project <a href="https://github.com/vhxs/algebraics-viz/tree/original-go-implementation">here</a>; as of this writing, this branch is also self-contained enough to just clone and run.</p>
+<h2 id="generating-and-visualizing-algebraic-numbers">Generating and Visualizing Algebraic Numbers</h2>
+<p>Brooks&rsquo; code to generate his visualization takes place in roughly three steps:</p>
+<ol>
+<li>Generate a set of integer polynomials</li>
+<li>Find roots of all the polynomials</li>
+<li>Draw them on a 2d plane</li>
+</ol>
+<p>(2) is thoroughly studied and root finding is a solved problem, the most well-known algorithm being <a href="https://en.wikipedia.org/wiki/Newton%27s_method">Newton&rsquo;s method</a>. Brooks&rsquo; code has an implementation of Newton&rsquo;s method, and he uses this together with <a href="https://en.wikipedia.org/wiki/Polynomial_long_division">polynomial long division</a> to find all roots of a given polynomial. For completeness, I translated that section of code <a href="https://github.com/vhxs/algebraics-viz/blob/main/algebraics/polynomial/polynomial.py#L18">into Python</a> and use the same approach to find polynomial roots, though one could just use <a href="https://numpy.org/doc/2.2/reference/generated/numpy.roots.html"><code>numpy.roots</code></a> to find roots more efficiently.</p>
+<p>(1) is the most mathematically interesting among these. One needs to be able to enumerate all integer polynomials to generate a set of them, and it isn&rsquo;t entirely obvious how one would do this. I&rsquo;ll first describe how I enumerated them, and compare it with how Brooks did it in his code; they&rsquo;re slightly different approaches but conceptually very similar.</p>
+<h3 id="enumerating-polynomials">Enumerating Polynomials</h3>
+<p>Any integer polynomial of degree \( d \) is representable by the tuple:</p>
+\[ (a_0, \ldots, a_d) \]<p>where \( a_i \in \mathbb{Z} \) is the coefficient for term \(x^i\) in the polynomial. So for <em>all</em> positive integers \( d \), we need to list of <em>all</em> tuples \( (a_0, \ldots, a_d) \). We&rsquo;ll enumerate polynomials by their <a href="https://en.wikipedia.org/wiki/Height_function#Height_of_a_polynomial"><em>length</em></a>. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> According to Wikipedia, the length of a polynomial \(p(x) = a_0 + a_1 x + \cdots a_d x^d\) is given by the sum of absolute value of its coefficients:</p>
+\[ \displaystyle L(p) = \sum _{i = 0} ^{d} | a_i | \]<p>If we fix both the degree \( d \) and the length \( \ell \) of a polynomial, then there are only finitely many such polynomials. That is, there only finitely many integer tuples \( (a_0, \ldots, a_d) \) that satisfy the equation:</p>
+\[ |a_0| + \cdots + |a_d| = \ell \]<p>So if we could enumerate all integer tuples \( (a_i) \) that satisfy the above for given \(\ell \) and \( d \), then we could hypothetically enumerate all integer polynomials with the following pseudocode:</p>
+<pre tabindex="0"><code>for length in range(1, max_length):
+    for degree in range(1, max_degree):
+        enumerate_polynomials(length, degree)
+</code></pre><p>Here&rsquo;s the <a href="https://github.com/vhxs/algebraics-viz/blob/main/algebraics/polynomial/polynomial.py#L120-L133">snippet</a> from my Python code that does exactly this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">enumerate_polynomials</span>(
+</span></span><span style="display:flex;"><span>    max_length: int, max_degree: int
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> Generator[ComplexPolynomial]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> length <span style="color:#f92672">in</span> range(max_length <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> degree <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, max_degree <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> partition <span style="color:#f92672">in</span> enumerate_partitions(length <span style="color:#f92672">+</span> degree <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, degree <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>                coefficients <span style="color:#f92672">=</span> [x <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> partition]
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> coefficients <span style="color:#f92672">and</span> coefficients[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">yield from</span> map(
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">lambda</span> coefs: ComplexPolynomial(
+</span></span><span style="display:flex;"><span>                            coefficients<span style="color:#f92672">=</span>[complex(x, <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> coefs], length<span style="color:#f92672">=</span>length
+</span></span><span style="display:flex;"><span>                        ),
+</span></span><span style="display:flex;"><span>                        generate_signs(coefficients),
+</span></span><span style="display:flex;"><span>                    )
+</span></span></code></pre></div><p>We can simplify finding all solutions to \( |a_0| + \cdots + |a_d| = \ell \) by finding all <em>non-negative</em> tuples \( (a_i) \) that satisfy the equation, then iterate over all sign tuples \( (\pm 1, \ldots, \pm 1) \) and multiply each sign with each solution \( a_i \). So we would only need to find all positive integer solutions to:</p>
+\[ a_0 + \cdots + a_d = \ell \]<p>Solving such an equation is a variation of solving the well-known problem of finding <a href="https://en.wikipedia.org/wiki/Integer_partition">integer partitions</a>. There&rsquo;s one more requirement not explicitly discussed yet, which is that \( a_d > 0 \) since the assumption is that the degree of \( p \) is \( d \); all other \( a_ i \) are permitted to be \( 0 \).</p>
+<p>Here&rsquo;s the <a href="https://github.com/vhxs/algebraics-viz/blob/main/algebraics/polynomial/partition.py#L5-L16">snippet</a> from my code that enumerates partitions of <code>n</code> with <code>length</code> many terms in the sum. There are standard implementations out there for how to enumerate integer partitions, this one being recursive:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">enumerate_partitions</span>(n: int, length: int) <span style="color:#f92672">-&gt;</span> Generator[list[int]]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">enumerate_partitions_recursive</span>(n: int, current_partition: list[int]) <span style="color:#f92672">-&gt;</span> Generator[list[int]]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(current_partition) <span style="color:#f92672">==</span> length:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">yield</span> list(current_partition)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            current_partition<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield from</span> enumerate_partitions_recursive(n <span style="color:#f92672">-</span> i, current_partition)
+</span></span><span style="display:flex;"><span>            current_partition<span style="color:#f92672">.</span>pop()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield from</span> enumerate_partitions_recursive(n, [])
+</span></span></code></pre></div><p>This is how I enumerate polynomials in my code. Now let&rsquo;s compare it to Brooks&rsquo; C code. These are the relevant for loops I&rsquo;d like to highlight from his code for polynomial enumeration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (h<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;h<span style="color:#f92672">&lt;=</span>maxh;h<span style="color:#f92672">++</span>) <span style="color:#75715e">// maxh is the maximum possible length
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>(h<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">-=</span><span style="color:#ae81ff">2</span>) <span style="color:#75715e">// i is an integer whose binary representation encodes polynomial coefficients
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  {
+</span></span><span style="display:flex;"><span>    t[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (j<span style="color:#f92672">=</span>h<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> ((i<span style="color:#f92672">&gt;&gt;</span>j)<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>) t[k]<span style="color:#f92672">++</span>; <span style="color:#66d9ef">else</span> {k<span style="color:#f92672">++</span>; t[k]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (j<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>(nz<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;j<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">--</span>) <span style="color:#75715e">// j is an integer whose binary representation encodes signs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// ...
+</span></span></span></code></pre></div><p>The outermost loop with index <code>h</code> looks like it&rsquo;s enumerating over a maximum possible polynomial length <code>maxh</code>. The next loop, indexed by <code>i</code>, starts with <code>i</code> being equal to \(2^{h-1} - 1 \) and decrements down to <code>0</code>. Such a number <code>i</code> is representable by \( h - 1 \) bits, and reading the body of this for loop, each run of <code>1</code>s of length \( r \) in this bit sequence encodes the coefficient \( r \). <code>0</code>s in the bit sequence separate the encoded coefficients. To make this more concrete, here&rsquo;s an example bit sequence:</p>
+\[ 1111001011101 \]<p>and this is the polynomial it represents:</p>
+\[ 4 + x^2 + 3x^3 + x^4 \]<p>Another way of thinking about this encoding is that each coefficient is represented in <a href="https://en.wikipedia.org/wiki/Unary_numeral_system">unary</a>, and each coefficient&rsquo;s unary representation is separated by a <code>0</code>.</p>
+<p>In this way, the maximum possible length of polynomial coefficients encodes like this is \( h - 1 \). This is approach is similar to how I&rsquo;ve enumerated all integer polynomials, but with each iteration of the outermost loop, we aren&rsquo;t actually enumerating every single polynomial of length up to <code>maxh</code>; this variable just sets an upper bound. However, any polynomial \( p \) is representable by the bit encoding above, so for large enough <code>h</code> (a large enough iteration of the for loop), \( p \)&rsquo;s bit representation would be enumerated. So Brooks&rsquo; enumeration does exhaustively enumerate all integer polynomials.</p>
+<p>The bottommost for loop above iterates over sign bits in the same way my code does, but using another integer <code>j</code> to encode a bit sequence representing the sign of each coefficient.</p>
+<p>Whichever way one chooses to enumerate the polynomials, this concludes step (1), and after root finding in step (2), one ends up with a set of complex numbers to visualize.</p>
+<h3 id="visualizing-the-roots">Visualizing the Roots</h3>
+<p>We want to visualize these roots on the 2d plane. Each root is a complex number with real and imaginary parts, which are the (x, y) coordinates of a point on the 2d plane. We could just draw a black dot at each such point, but that wouldn&rsquo;t be fun. Instead, Brooks&rsquo; visualization draws a circle at (x, y), with a radius and color that varies based on the length and degree of its corresponding polynomial, respectively. If the root \( z \) is a root of polynomial \( p \) with degree \( d \) and length \( \ell \), then the radius of the drawn circle is inversely proportional to \( \ell + d \); more specifically, the radius is \( \dfrac{1}{2^{\ell + d + 1}} \). The degree \( d \) determines the color of the circle, so that all circles of a given degree are colored the same.</p>
+<p>Consider the case where we want to visualize all polynomials up to degree \( 3 \) and length \( 2 \). Brooks&rsquo; visualization excludes polynomials of degree \( 1 \), so we&rsquo;ll only consider \( 2 \) and \( 3 \). Then these set of polynomials capture all the roots we want to plot:</p>
+<ul>
+<li>\( x^2 \)</li>
+<li>\( x^2 + 1 \)</li>
+<li>\( x^2 - 1 \)</li>
+<li>\( x^3 + 1 \)</li>
+<li>\( x^3 - 1 \)</li>
+</ul>
+<p>There are other polynomials not listed here, such as \( -x^2 + 1 \) that differ only in sign from one of the above, and thus have the same roots, or \(x^3 - x^2 \) whose roots are otherwise captured by some combination of the above. This set of polynomials has the following roots: \( 0, \pm 1, \pm i\) which are roots of polynomials of degree \( 2 \) and \( 3 \), and \( \pm \frac{1}{2} \pm i \frac{\sqrt{3}}{2} \) which are roots of polynomials of degree 3. If a complex number is a root of polynomials of different degrees, multiple circles are drawn, and overlapping circles are drawn such that their colors blend together.</p>
+<p>Below, degree \( 2 \) roots (\( 0, \pm 1, \pm i\)) are red and the degree \( 3 \) roots (\( \pm \frac{1}{2} \pm i \frac{\sqrt{3}}{2} \)) are green. The red circles are purely real or imaginary (they falls on the axes), while the green circles are not.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/04/12/visualizing-the-algebraic-numbers/length_2_degree_3.png"
+    alt="Red circles are of degree 2, green circles are of degree 3" width="50%"><figcaption>
+      <p>Red circles are of degree 2, green circles are of degree 3</p>
+    </figcaption>
+</figure>
+
+</div>
+<h2 id="building-an-application">Building an Application</h2>
+<p>In 2022, I had originally translated Brooks&rsquo; code into Go. This time in 2025, I was more explicit with my goals: I wanted to (1) make my code easily useable and reproducible, and (2) wanted to write code of reasonably good quality (eg, not research-quality code written to meet a paper deadline). So I picked a language that I&rsquo;m much more familiar with: Python. By now, I&rsquo;ve written and rewritten multiple Python applications and am a fairly competent Python developer knowledgeable in modern libraries and tools, so I thought that this would also be a good way to put my skills into practice working on a thing that I love spending time thinking about: visualizing math.</p>
+<p>The code is on <a href="https://github.com/vhxs/algebraics-viz">GitHub</a>. I used Astral&rsquo;s <a href="https://docs.astral.sh/uv/">uv</a> for dependency management, <a href="https://docs.pydantic.dev/latest/">Pydantic</a> to manage data associated with polynomials and their roots (along with some validation logic), and <a href="https://www.dynaconf.com/">Dynaconf</a> for basic configuration management. I used <a href="https://docs.pytest.org/en/stable/">pytest</a> to write a test for my root-finding implementation. I installed the <a href="https://mypy-lang.org/">mypy</a> VSCode extension, so that it would get mad at me if I&rsquo;ve got bad type hints somewhere, and added <a href="https://docs.astral.sh/ruff/">Ruff</a> as a GitHub Action to repository to enforce good formatting. Also on GitHub is an Action to run <code>pytest</code>, and also an Action to publish a release of the application as a standalone executable, targeted for Ubuntu (and built with <a href="https://pyinstaller.org/en/stable/">pyinstaller</a>) though not thoroughly tested.</p>
+<p>I used <a href="https://pypi.org/project/PyQt6/">PyQt6</a> to add a GUI to the code and make it a desktop application, though this was the first time I&rsquo;ve used PyQt and a long time since I&rsquo;ve built any GUIs in Python (I&rsquo;ve built some GUIs in <a href="https://docs.python.org/3/library/tkinter.html">Tkinter</a> a long, long time ago). So the GUI code is a bit messier than I like, but getting that part correct was less important to me.</p>
+<p>Here&rsquo;s a screenshot of the application when initially launched on macOS:</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/04/12/visualizing-the-algebraic-numbers/app_screenshot.png"
+    alt="The desktop application" width="70%"><figcaption>
+      <p>The desktop application</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>There&rsquo;s a lot that could be done to improve this application. For example, the <code>pytest</code> suite could be expanded to include tests for the polynomial enumeration algorithms. I implemented Brooks&rsquo; algorithm for polynomial enumeration, but it&rsquo;s not currently usable through the GUI. The application could also use tooltips and generally better explain what each UI widget controls.</p>
+<p>However, I think there are just enough good practices employed in the development of this application for it to be extensible by others. Part of the focus on code quality is to enable others to easily build off of it. I believe that any source code used to develop mathematical visualizations like this should be accessible and easy to use, so that it might inspire other mathematicians or software engineers to do innovative and cool visualization stuff with math. Brooks&rsquo; original code is license under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons ShareAlike license</a>. I&rsquo;ve license my code under an <a href="https://opensource.org/license/mit">MIT license</a>.</p>
+<h2 id="use-of-ai">Use of AI</h2>
+<p>ChatGPT was generally a force multiplier in the development of this code, provided that I was using it effectively. Here are a few examples of how it helped me:</p>
+<ul>
+<li>Researching Python GUI frameworks that were compatible with <a href="https://pyopengl.sourceforge.net/">PyOpenGL</a>. GUI frameworks recommended by ChatGPT included <a href="https://www.pygame.org/news">PyGame</a>, <a href="https://dearpygui.readthedocs.io/en/latest/">Dear PyGui</a>, and <a href="https://wiki.python.org/moin/PyQt">PyQt</a>. I went with PyQt6, though ChatGPT 4o was giving me PyQt5 code snippets until I explicitly asked it to use version 6.</li>
+<li>Searching PyQt6 documentation. I&rsquo;m not that experienced of a UI developer, but ChatGPT was able to take vague descriptions of what features I wanted to add to the GUI, and recommend the relevant PyQt6 functions that I should use.</li>
+<li>Writing basic PyQt6 widgets. ChatGPT (o3) was less good at this, but it still pointed me in the right direction.</li>
+<li>Translating my Go code into Python. It was pretty good at this, but I&rsquo;ll also take some credit here since I&rsquo;d already done the hard work of traslating the original C code into Go. However, ChatGPT o3 seems to do a decent job at <a href="https://chatgpt.com/share/6834e900-e8e0-8000-a499-67774f2c4ca2">comprehending the C code</a>.</li>
+<li>Turning my vague description of what I thought should be a mathematical theorem, and <a href="https://chatgpt.com/c/67ec5d82-ded0-8000-9a42-0ee1902fe6af">suggesting</a> an actual theorem that formally states what I had in mind. I learned of Cauchy&rsquo;s root bound for the first time via ChatGPT 4o.</li>
+</ul>
+<p>The one instance I used ChatGPT for writing this post was to <a href="https://chatgpt.com/share/6834eb50-7dd8-8000-89dd-d7e36906f48a">ask it for a succinct description of the algebraic numbers</a> for my target audience. It gave me something that wasn&rsquo;t technically accurate enough for me to include; namely, it suggested that all algebraic numbers are expressible by radicals, which is <a href="https://www.quora.com/Can-a-number-be-algebraic-but-not-expressible-by-means-of-radicals">not true</a>. Nothing else about this blog post is AI-generated.</p>
+<h2 id="_et-cetera_"><em>Et Cetera</em></h2>
+<p>As I was thinking about visualizing the algebraic numbers, and enumerating polynomials by degree \( d \) and length \( \ell \), I was wondering what constrained algebraic numbers to be &ldquo;close&rdquo; to the origin. What prevents roots of these polynomials to be way far out there? As we see, the roots cluster around the origin, so some mathmetical property must be forcing this. <a href="https://en.wikipedia.org/wiki/Geometrical_properties_of_polynomial_roots#Lagrange's_and_Cauchy's_bounds">Cauchy&rsquo;s root bound</a> is a theorem I learned when writing about this post. It&rsquo;s a bound on the absolute value of a polynomial&rsquo;s roots, in terms of \( d \) and \( \ell \). Here&rsquo;s one version of the bound:</p>
+\[ 1 + \max \left\{ \dfrac{a_{n-1}}{a_n}, \dfrac{a_{n-2}}{a_n}, \ldots, \dfrac{a_{0}}{a_n} \right\} \]<p>John Baez&rsquo;s blog post includes a citation of <a href="https://en.wikipedia.org/wiki/Roth%27s_theorem">Roth&rsquo;s Theorem</a>. As quoted from the Wikipedia page:</p>
+<blockquote>
+<p>It is of a qualitative type, stating that algebraic numbers cannot have many rational approximations that are &lsquo;very good&rsquo;.</p>
+</blockquote>
+<p>The blog post suggests that this observation could be turned into other interesting ideas for visualizing the algebraic numbers.</p>
+<p>The real algebraic numbers are <a href="https://en.wikipedia.org/wiki/Countable_set">countable</a> and dense in the real numbers, and that&rsquo;s one motivation for devising creative ways to visualize them. This is also true of the rational numbers \( \mathbb{Q} \): they&rsquo;re also countable and dense in \( \mathbb{R} \). Similarly, mathematicians have explored ways of <a href="https://risingentropy.com/visualizing-the-rationals/">visualizing the rational numbers</a>. In writing this post, I was wondering whether there are creative ways of visualizing the real <a href="https://en.wikipedia.org/wiki/Computable_number">computable numbers</a>, since they&rsquo;re also countable, dense, and form a subfield of \( \mathbb{R} \). In fact, they&rsquo;re also a <a href="https://en.wikipedia.org/wiki/Real_closed_field">real closed field</a> like the real algebraic numbers. The main challenge here is determining a natural way to map computable numbers onto the 2d plane; this is much more obvious to do with both the rational and algebraic numbers. Also, the <a href="https://math.stackexchange.com/questions/76374/properties-of-computable-numbers#comment181525_76374">computable numbers aren&rsquo;t computably enumerable</a>.</p>
+<!-- A polynomial is [solvable by radicals](https://math.stackexchange.com/questions/720630/what-does-it-mean-for-a-polynomial-to-be-solvable-by-radicals) if all its roots can be expressed with arithmetic operations and radicals. -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>It&rsquo;s unclear to me where &ldquo;length&rdquo; is standard terminology here. It&rsquo;s mentioned on Wikipedia, but has no explicit reference, and neither can I find good references for it online. However, the &ldquo;height&rdquo; of a polynomial is standard terminology.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+ </main>
+</div>
+
+<footer>
+  <div class="footer-links">
+    &copy; <a href="https://vikramsaraph.com/"> Vikram Saraph</a> &nbsp; 2024 - 2025
+    &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
+    <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
+    <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script
+    src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js"
+    defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+</div>
+</footer>
+</body>
+
+</html>

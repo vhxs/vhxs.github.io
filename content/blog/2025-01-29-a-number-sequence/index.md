@@ -6,6 +6,7 @@ tags:
   - games
   - combinatorics
   - oeis
+  - numbers
 ---
 
 ## What is OEIS?

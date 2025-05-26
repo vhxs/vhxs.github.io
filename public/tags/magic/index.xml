@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Magic on Vikram Saraph</title>
-    <link>http://localhost:1313/tags/magic/</link>
+    <link>https://vikramsaraph.com/tags/magic/</link>
     <description>Recent content in Magic on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/magic/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vikramsaraph.com/tags/magic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spindown Dice</title>
-      <link>http://localhost:1313/blog/2024/10/14/spindown-dice/</link>
+      <link>https://vikramsaraph.com/blog/2024/10/14/spindown-dice/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024/10/14/spindown-dice/</guid>
+      <guid>https://vikramsaraph.com/blog/2024/10/14/spindown-dice/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently been dabbling in Magic: The Gathering. &lt;a href=&#34;https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/&#34;&gt;It&amp;rsquo;s a hard game&lt;/a&gt; with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points. An ordinary d20 doesn&amp;rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. &lt;a href=&#34;https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP&#34;&gt;This blog post&lt;/a&gt; talks more about spindown d20s.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualization on Vikram Saraph</title>
+    <link>https://vikramsaraph.com/tags/visualization/</link>
+    <description>Recent content in Visualization on Vikram Saraph</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vikramsaraph.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visualizing the Algebraic Numbers</title>
+      <link>https://vikramsaraph.com/blog/2025/04/12/visualizing-the-algebraic-numbers/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vikramsaraph.com/blog/2025/04/12/visualizing-the-algebraic-numbers/</guid>
+      <description>&lt;h2 id=&#34;what-are-the-algebraic-numbers&#34;&gt;What are the Algebraic Numbers?&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://mathworld.wolfram.com/AlgebraicNumber.html&#34;&gt;algebraic numbers&lt;/a&gt; are complex numbers that are solutions of polynomial equations with integer coefficients. For example, \(\sqrt{2} \) is algebraic because it satisfies \( x^2 - 2 = 0 \), while the number \( \pi \) is not algebraic (it&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Transcendental_number&#34;&gt;transcendental&lt;/a&gt;) since it&amp;rsquo;s not a root of any integer polynomial you can imagine. They form a subfield of the complex numbers, so they&amp;rsquo;re closed under addition, subtraction, multiplication, and division. Furthermore, the rational numbers are a subfield of the algebraic numbers, since the rational number \( a / b \) is a root of the linear integer polynomial \( bx - a = 0 \).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
