@@ -37,7 +37,7 @@ If you look up "algebraic number visualization" in a search engine, you'll also 
   {{< figure src="https://i0.wp.com/im.icerm.brown.edu/wp-content/uploads/2019/12/image4-3.png?w=1727&ssl=1" width="70%" caption="A visualizations of the algebraic numbers on ICERM's blog" >}}
 </div>
 
-I myself have known about Brooks' visualization since learning about the algebraic numbers in 2011, and in summer of 2022 when I had ample free time but less focused of a career direction, I decided to recreate the visualization in [Go](https://go.dev/) as reason to learn a new language. In the process, I also learned the minimum amount of [OpenGL](https://www.opengl.org/) I needed to know to (mostly) successfully rewrite it. Looking back, the code isn't very well structued, but it works. I left the Go code I wrote intact on a separate branch of my Python project [here](https://github.com/vhxs/algebraics-viz/tree/original-go-implementation); as of this writing, this branch is also self-contained enough to just clone and run.
+I myself have known about Brooks' visualization since learning about the algebraic numbers in 2011, and in summer of 2022 when I had ample free time but less focused of a career direction, I decided to recreate the visualization in [Go](https://go.dev/) as reason to learn a new language. In the process, I also learned the minimum amount of [OpenGL](https://www.opengl.org/) I needed to know to (mostly) successfully rewrite it. Looking back, the code isn't very well structured, but it works. I left the Go code I wrote intact on a separate branch of my Python project [here](https://github.com/vhxs/algebraics-viz/tree/original-go-implementation); as of this writing, this branch is also self-contained enough to just clone and run.
 
 ## Generating and Visualizing Algebraic Numbers
 
@@ -198,7 +198,7 @@ The one instance I used ChatGPT for writing this post was to [ask it for a succi
 
 ## _Et Cetera_
 
-As I was thinking about visualizing the algebraic numbers, and enumerating polynomials by degree \( d \) and length \( \ell \), I was wondering what constrained algebraic numbers to be "close" to the origin. What prevents roots of these polynomials to be way far out there? As we see, the roots cluster around the origin, so some mathmetical property must be forcing this. [Cauchy's root bound](https://en.wikipedia.org/wiki/Geometrical_properties_of_polynomial_roots#Lagrange's_and_Cauchy's_bounds) is a theorem I learned when writing about this post. It's a bound on the absolute value of a polynomial's roots, in terms of \( d \) and \( \ell \). Here's one version of the bound:
+As I was thinking about visualizing the algebraic numbers, and enumerating polynomials by degree \( d \) and length \( \ell \), I was wondering what constrained algebraic numbers to be "close" to the origin. What prevents roots of these polynomials from being way far out there? As we see, the roots cluster around the origin, so some mathmetical property must be forcing this. [Cauchy's root bound](https://en.wikipedia.org/wiki/Geometrical_properties_of_polynomial_roots#Lagrange's_and_Cauchy's_bounds) is a theorem I learned when writing about this post. It's a bound on the absolute value of a polynomial's roots, in terms of \( d \) and \( \ell \). Here's one version of the bound:
 
 \[ 1 + \max \left\{ \dfrac{a_{n-1}}{a_n}, \dfrac{a_{n-2}}{a_n}, \ldots, \dfrac{a_{0}}{a_n} \right\} \]
 
