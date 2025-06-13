@@ -1,7 +1,7 @@
 ---
 title: Visualizing the Algebraic Numbers
 author: Vikram Saraph
-date: "2025-04-12"
+date: "2025-05-26"
 tags:
   - numbers
   - algebra
@@ -132,11 +132,11 @@ for (h=2;h<=maxh;h++) // maxh is the maximum possible length
 
 The outermost loop with index `h` looks like it's enumerating over a maximum possible polynomial length `maxh`. The next loop, indexed by `i`, starts with `i` being equal to \(2^{h-1} - 1 \) and decrements down to `0`. Such a number `i` is representable by \( h - 1 \) bits, and reading the body of this for loop, each run of `1`s of length \( r \) in this bit sequence encodes the coefficient \( r \). `0`s in the bit sequence separate the encoded coefficients. To make this more concrete, here's an example bit sequence:
 
-\[ 1111001011101 \]
+\[ \textcolor{red}{1111}00\textcolor{orange}{1}0\textcolor{purple}{111}0\textcolor{green}{1} \]
 
 and this is the polynomial it represents:
 
-\[ 4 + x^2 + 3x^3 + x^4 \]
+\[ \textcolor{red}{4} + \textcolor{orange}{1}x^2 + \textcolor{purple}{3}x^3 + \textcolor{green}{1}x^4 \]
 
 Another way of thinking about this encoding is that each coefficient is represented in [unary](https://en.wikipedia.org/wiki/Unary_numeral_system), and each coefficient's unary representation is separated by a `0`.
 
