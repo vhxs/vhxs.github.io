@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Visualizing the Algebraic Numbers | Vikram Saraph</title>
@@ -53,7 +53,7 @@
 <p>You&rsquo;d probably learn about the algebraic numbers when taking an advanced undergraduate course in abstract algebra. That&rsquo;s when I learned about them, and I was particularly fascinated by them after seeing <a href="https://en.wikipedia.org/wiki/Algebraic_number#/media/File:Algebraicszoom.png">this cool visualization of them on Wikipedia</a>. Generally speaking, there isn&rsquo;t a straightfoward way to visualize them; for example, if you drew a dot at each algebraic number on the complex plane, you&rsquo;d fill up
 the whole plane, since algebraic numbers are <a href="https://en.wikipedia.org/wiki/Dense_set"><em>dense</em></a> in the complex numbers. And that wouldn&rsquo;t make for a very interesting visualization, would it?</p>
 <p><a href="https://en.wikipedia.org/wiki/User:Stephen_J._Brooks">Stephen J. Brooks</a>, the Wikipedia user who developed this visualization, decided to do something much more creative instead. A snippet of the C and OpenGL source code used to create the visualization is included in the image&rsquo;s <a href="https://en.wikipedia.org/wiki/User:Stephen_J._Brooks/algebraics/src">metadata</a>, though it&rsquo;s not self-contained enough to just copy, compile, and run, and it&rsquo;s light on details of what the code is doing or how it works.</p>
-<p>This blog post is my attempt at demystifying the original visualization by rewriting the code in Python, and explaining here the math involved and how the math is translated into code. The code I wrote which I&rsquo;ll reference in this post is <a href="https://github.com/vhxs/algebraics-viz">here</a>.</p>
+<p>This blog post is my attempt at demystifying the original visualization by rewriting the code in Python, and explaining here the math involved and how it translates into code. The code I wrote which I&rsquo;ll reference in this post is <a href="https://github.com/vhxs/algebraics-viz">here</a>.</p>
 <div style="text-align: center;">
 <figure><img src="/blog/2025/05/26/visualizing-the-algebraic-numbers/example.png"
     alt="Example output from my application. Continue on to read more about what this is." width="80%"><figcaption>
@@ -213,7 +213,7 @@ the whole plane, since algebraic numbers are <a href="https://en.wikipedia.org/w
 
 <footer>
   <div class="footer-links">
-    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2025
+    &copy; <a href="https://vikramsaraph.com/"> Vikram Saraph</a> &nbsp; 2024 - 2025
     &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
     <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
     <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>

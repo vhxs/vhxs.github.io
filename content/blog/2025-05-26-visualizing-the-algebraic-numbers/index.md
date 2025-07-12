@@ -18,7 +18,7 @@ the whole plane, since algebraic numbers are [_dense_](https://en.wikipedia.org/
 
 [Stephen J. Brooks](https://en.wikipedia.org/wiki/User:Stephen_J._Brooks), the Wikipedia user who developed this visualization, decided to do something much more creative instead. A snippet of the C and OpenGL source code used to create the visualization is included in the image's [metadata](https://en.wikipedia.org/wiki/User:Stephen_J._Brooks/algebraics/src), though it's not self-contained enough to just copy, compile, and run, and it's light on details of what the code is doing or how it works.
 
-This blog post is my attempt at demystifying the original visualization by rewriting the code in Python, and explaining here the math involved and how the math is translated into code. The code I wrote which I'll reference in this post is [here](https://github.com/vhxs/algebraics-viz).
+This blog post is my attempt at demystifying the original visualization by rewriting the code in Python, and explaining here the math involved and how it translates into code. The code I wrote which I'll reference in this post is [here](https://github.com/vhxs/algebraics-viz).
 
 <div style="text-align: center;">
 {{< figure src="example.png" caption="Example output from my application. Continue on to read more about what this is." width="80%" >}}

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on Vikram Saraph</title>
-    <link>http://localhost:1313/tags/website/</link>
+    <link>https://vikramsaraph.com/tags/website/</link>
     <description>Recent content in Website on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vikramsaraph.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up a Website with Hugo</title>
-      <link>http://localhost:1313/blog/2024/12/29/setting-up-a-website-with-hugo/</link>
+      <link>https://vikramsaraph.com/blog/2024/12/29/setting-up-a-website-with-hugo/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024/12/29/setting-up-a-website-with-hugo/</guid>
+      <guid>https://vikramsaraph.com/blog/2024/12/29/setting-up-a-website-with-hugo/</guid>
       <description>&lt;h2 id=&#34;blogging-and-static-site-generators&#34;&gt;Blogging and static site generators&lt;/h2&gt;&#xA;&lt;p&gt;Yes, I have a website and an online presence. My first incarnation of a (Wordpress) &lt;a href=&#34;https://markivikram.wordpress.com/about&#34;&gt;blog&lt;/a&gt; from 2013 is still out there living on the Internet; it was named after &lt;a href=&#34;https://en.wikipedia.org/wiki/Constructible_universe&#34;&gt;Gödel’s constructible universe&lt;/a&gt; since I was obsessed with the foundations of mathematics when studying theoretical computer science at that time.&lt;/p&gt;&#xA;&lt;p&gt;This post is going to read like a diary entry for how I set up a blog-ready website.&lt;/p&gt;</description>
     </item>
   </channel>
