@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Vikram Saraph</title>
-    <link>https://vikramsaraph.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vikramsaraph.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algebra</title>
-      <link>https://vikramsaraph.com/tags/algebra/</link>
+      <link>http://localhost:1313/tags/algebra/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/algebra/</guid>
+      <guid>http://localhost:1313/tags/algebra/</guid>
       <description></description>
     </item>
     <item>
       <title>Combinatorics</title>
-      <link>https://vikramsaraph.com/tags/combinatorics/</link>
+      <link>http://localhost:1313/tags/combinatorics/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/combinatorics/</guid>
+      <guid>http://localhost:1313/tags/combinatorics/</guid>
       <description></description>
     </item>
     <item>
       <title>Numbers</title>
-      <link>https://vikramsaraph.com/tags/numbers/</link>
+      <link>http://localhost:1313/tags/numbers/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/numbers/</guid>
+      <guid>http://localhost:1313/tags/numbers/</guid>
       <description></description>
     </item>
     <item>
       <title>Visualization</title>
-      <link>https://vikramsaraph.com/tags/visualization/</link>
+      <link>http://localhost:1313/tags/visualization/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/visualization/</guid>
+      <guid>http://localhost:1313/tags/visualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Games</title>
-      <link>https://vikramsaraph.com/tags/games/</link>
+      <link>http://localhost:1313/tags/games/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/games/</guid>
+      <guid>http://localhost:1313/tags/games/</guid>
       <description></description>
     </item>
     <item>
       <title>Oeis</title>
-      <link>https://vikramsaraph.com/tags/oeis/</link>
+      <link>http://localhost:1313/tags/oeis/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/oeis/</guid>
+      <guid>http://localhost:1313/tags/oeis/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>https://vikramsaraph.com/tags/css/</link>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Html</title>
-      <link>https://vikramsaraph.com/tags/html/</link>
+      <link>http://localhost:1313/tags/html/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/html/</guid>
+      <guid>http://localhost:1313/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Meta</title>
-      <link>https://vikramsaraph.com/tags/meta/</link>
+      <link>http://localhost:1313/tags/meta/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/meta/</guid>
+      <guid>http://localhost:1313/tags/meta/</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>https://vikramsaraph.com/tags/website/</link>
+      <link>http://localhost:1313/tags/website/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/website/</guid>
+      <guid>http://localhost:1313/tags/website/</guid>
       <description></description>
     </item>
     <item>
       <title>Magic</title>
-      <link>https://vikramsaraph.com/tags/magic/</link>
+      <link>http://localhost:1313/tags/magic/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/magic/</guid>
+      <guid>http://localhost:1313/tags/magic/</guid>
       <description></description>
     </item>
     <item>
       <title>Topology</title>
-      <link>https://vikramsaraph.com/tags/topology/</link>
+      <link>http://localhost:1313/tags/topology/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://vikramsaraph.com/tags/topology/</guid>
+      <guid>http://localhost:1313/tags/topology/</guid>
       <description></description>
     </item>
   </channel>
