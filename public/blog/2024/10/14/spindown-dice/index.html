@@ -87,7 +87,7 @@ But is this actually a shelling order? The answer to this question is &ldquo;yes
 there are many such spindown orders, and listing them all would be a challenge in itself. We&rsquo;re instead going to
 show by contradiction that all spindown orders are also shelling orders, by assuming that there&rsquo;s a spindown order on a
 d20 that isn&rsquo;t a shelling order.</p>
-<h2 id="spindown-orders-_are_-shelling-orders-on-a-d20">Spindown orders <em>are</em> shelling orders (&hellip;on a d20)</h2>
+<h2 id="spindown-orders-are-shelling-orders-on-a-d20">Spindown orders <em>are</em> shelling orders (&hellip;on a d20)</h2>
 <p>So suppose we have a spindown order that isn&rsquo;t a shelling order. Then in the spindown order, at some point, we must attach a triangle, calling it \(B\), that (1) <strong>attaches along a vertex</strong> so that shellability is violated. But being part of a spindown order, it must (2) <strong>also be attached to an edge of an existing triangle</strong> (calling this triangle \(A\)). Let&rsquo;s refer to the sequence of triangles we have already attached via spindown order as the <em>path</em> \(P\) that we&rsquo;ve built so far, up to and including \(A\) (but not \(B\)).</p>
 <figure><img src="/blog/2024/10/14/spindown-dice/path.png"
     alt="An example path \(P\) (colored in red), and \(B\) in green." width="25%"><figcaption>
@@ -118,7 +118,7 @@ d20 that isn&rsquo;t a shelling order.</p>
 </figure>
 
 <p>This loop cuts the sphere into two hemispheres, with \(X\) on one hemisphere and \(Y\) on the other. If we want to continue adding triangles to \(P\), we would either have to choose \(X\) or \(Y\), after which the other is unreachable. This means that \(P\) cannot be extended to a spindown order on the whole d20, which contradicts our initial assumption. Therefore all spindown orders must be shelling orders. We started with the assumption that \(C\) and \(D\) were both part of \(P\), but the same topological reasoning works if only one of them is part of \(P\).</p>
-<h2 id="spindown-orders-_are-not_-shelling-orders-generally">Spindown orders <em>are not</em> shelling orders (generally)</h2>
+<h2 id="spindown-orders-are-not-shelling-orders-generally">Spindown orders <em>are not</em> shelling orders (generally)</h2>
 <p>This begs the question: if we generalize the concept of &ldquo;spindown order&rdquo; to other simplicial complexes, are spindown orders <em>always</em> shelling orders? The answer to this is &ldquo;no&rdquo;, and a counterexample is a fairly simple triangulation of a square. Illustrated below are examples of a spindown order that isn&rsquo;t a shelling order, and also a shelling order that is not a spindown order.</p>
 <div class="image-wrapper" style="display: flex; justify-content: space-between;">
   <figure><img src="/blog/2024/10/14/spindown-dice/shelling_not_spindown.png"
