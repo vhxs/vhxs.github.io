@@ -6,8 +6,15 @@
     <description>Recent content in Blog posts on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Math of Single-sideband Modulation</title>
+      <link>http://localhost:1313/blog/2025/12/29/the-math-of-single-sideband-modulation/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2025/12/29/the-math-of-single-sideband-modulation/</guid>
+      <description>&lt;p&gt;I wrote this post as I learned about signal modulation while studying for getting a &lt;a href=&#34;https://www.arrl.org/getting-your-technician-license&#34;&gt;Technician amateur radio license&lt;/a&gt;. &lt;a href=&#34;https://www.hamradioschool.com/post/understanding-single-sideband-ssb&#34;&gt;Single-sideband modulation&lt;/a&gt; (SSB for short) is just one of a handful of &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_amateur_radio_modes&#34;&gt;modes&lt;/a&gt; of transmitting information by amateur radio, though I initially found the math of it to be confusing.&lt;/p&gt;&#xA;&lt;p&gt;So did some digging around on the Internet to resolve my confusion. This blog post is the result of that digging. &lt;strong&gt;As a disclaimer&lt;/strong&gt;: neither my professional nor educational background is in RF or electrical engineering. But I&amp;rsquo;ve always had an interest in electronics and I do have the math background to understand some of the nuances to write about it. If there is anything misstated here, please feel free to reach out over any one of my many social media accounts, and I will correct any mistakes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Visualizing the Algebraic Numbers</title>
       <link>http://localhost:1313/blog/2025/05/26/visualizing-the-algebraic-numbers/</link>

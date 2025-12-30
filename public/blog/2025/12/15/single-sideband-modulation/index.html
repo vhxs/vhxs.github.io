@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Single-sideband Modulation | Vikram Saraph</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" /> <link
+    rel="stylesheet" href="/css/fonts.css" /> 
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e0/Aleph0.svg" type="image/x-icon" />
+
+
+  </head>
+
+  
+  <body>
+    <div class="header">
+      <h1>Vikram Saraph</h1>
+      <nav>
+        <ul class="menu">
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/blog/">Blog</a></li>
+          
+          <li><a href="/tags/">Tags</a></li>
+          
+        </ul>
+      </nav></div
+    >
+  </body>
+  
+</html>
+
+
+<div class="content">
+  <div class="article-meta">
+    <h1><span class="title">Single-sideband Modulation</span></h1>
+  </div>
+  <hr />
+  <main> <p>I&rsquo;ve written this blog post as I learned about signal modulation while studying for getting a <a href="https://www.arrl.org/getting-your-technician-license">Technician amateur radio license</a>. Single-sideband modulation is just one of a handful of modes of transmitting information by amateur radio, though I initially found the math of it to be confusing.</p>
+<p>So did some digging to resolve my confusion. This blog post is the result of that digging. Neither my professional nor educational background is in RF or electrical engineering, but I do have the math background to understand some of the nuances and write about it. If there is anything misstated here, please feel free to reach out and I will correct it.</p>
+<h2 id="what-is-signal-modulation-why-use-it">What is signal modulation? Why use it?</h2>
+<p>Signal modulation is a technique in signal processing used to encode information in a radio wave in order to transmit that information. Typically, a lower-frequency wave is encoded in a higher-frequency one (called the carrier wave), by varying the amplitude, frequency, or phase of the carrier wave. Metaphorically, it’s like using a laser pointer (our carrier wave) to transmit Morse code (information to send) by turning it on and off. The process of varying the carrier wave is called modulation, and a carrier wave that has been varied is said to be modulated.</p>
+<p>Why not just transmit low-frequency signals directly? We can’t do this due to physical limitations of what RF signals that antennas can practically transmit. The exact math and physics of these limitations would warrant its own blog post, but in simple terms, the longer the wavelength of the signal to be transmitted, the longer antenna you would need to do that. And with signals in the range of voice frequency, which is 300 Hz to 3400 Hz, if using a <a href="https://www.youtube.com/watch?v=PPKEpJEt_cM">half-wave dipole antenna</a> (for example), you would need an antenna of length between 40 km and 475 km. That is completely unreasonable to do. So one has to transmit information using higher frequencies instead. That’s where modulation of high-frequency signals comes into the picture.</p>
+<h2 id="amplitude-modulation">Amplitude modulation</h2>
+<p><em>Amplitude modulation</em> is modulation by varying the amplitude of a carrier wave. How this works is best illustrated by simple example. Suppose we start with an unmodulated carrier wave as below.</p>
+<p>This wave carries no information (beyond its frequency and amplitude) since it’s just a plain sine wave. Indeed, if we take the Fourier transform of the unmodulated carrier wave, we get a single impulse corresponding to the single frequency in the wave.</p>
+<p>Hypothetically, what if we could control the amplitude of this wave, say between two values, 0 and 1? Then we could transmit bits using this convention: in a given time interval, any time we see an amplitude of 1, interpret it as a 1, 0 for 0. Then we could transmit bits and hence information over the signal.</p>
+<p>This particular method of modulation is actually called <a href="https://en.wikipedia.org/wiki/On%E2%80%93off_keying">on-off keying</a>, and is used for digital signal modulation. Amplitude modulation is conceptually the same, but instead of varying the amplitude between two discrete values, we continuously vary the amplitude so that we can represent continuous signals.</p>
+ </main>
+</div>
+
+<footer>
+  <div class="footer-links">
+    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2025
+    &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
+    <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
+    <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script
+    src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js"
+    defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+</div>
+</footer>
+</body>
+
+</html>

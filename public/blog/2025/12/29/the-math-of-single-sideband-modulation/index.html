@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Math of Single-sideband Modulation | Vikram Saraph</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" /> <link
+    rel="stylesheet" href="/css/fonts.css" /> 
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e0/Aleph0.svg" type="image/x-icon" />
+
+
+  </head>
+
+  
+  <body>
+    <div class="header">
+      <h1>Vikram Saraph</h1>
+      <nav>
+        <ul class="menu">
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/blog/">Blog</a></li>
+          
+          <li><a href="/tags/">Tags</a></li>
+          
+        </ul>
+      </nav></div
+    >
+  </body>
+  
+</html>
+
+
+<div class="content">
+  <div class="article-meta">
+    <h1><span class="title">The Math of Single-sideband Modulation</span></h1>
+  </div>
+  <hr />
+  <main> <p>I wrote this post as I learned about signal modulation while studying for getting a <a href="https://www.arrl.org/getting-your-technician-license">Technician amateur radio license</a>. <a href="https://www.hamradioschool.com/post/understanding-single-sideband-ssb">Single-sideband modulation</a> (SSB for short) is just one of a handful of <a href="https://en.wikipedia.org/wiki/List_of_amateur_radio_modes">modes</a> of transmitting information by amateur radio, though I initially found the math of it to be confusing.</p>
+<p>So did some digging around on the Internet to resolve my confusion. This blog post is the result of that digging. <strong>As a disclaimer</strong>: neither my professional nor educational background is in RF or electrical engineering. But I&rsquo;ve always had an interest in electronics and I do have the math background to understand some of the nuances to write about it. If there is anything misstated here, please feel free to reach out over any one of my many social media accounts, and I will correct any mistakes.</p>
+<h2 id="what-is-signal-modulation-why-use-it">What is signal modulation? Why use it?</h2>
+<p>Signal modulation is a technique in signal processing used to encode information in a radio wave in order to transmit that information. Typically, a lower-frequency wave is encoded in a higher-frequency one (called the <a href="https://en.wikipedia.org/wiki/Carrier_wave"><em>carrier wave</em></a>), by varying the amplitude, frequency, or phase of the carrier wave. It&rsquo;d be like using a laser pointer (our carrier wave) to transmit Morse code (information to send) by turning it on and off. The process of varying the carrier wave is called <em>modulation</em>, and a carrier wave that has been varied to encode information is said to be <em>modulated</em>.</p>
+<p>Why not just transmit low-frequency signals directly? We can’t do this due to physical limitations of the antennas that transmit RF. The exact math and physics of these limitations would warrant its own blog post, but in simple terms, the longer the wavelength of the signal to be transmitted, the longer antenna you would need to do that. And with signals in the range of voice frequency, which is <a href="https://en.wikipedia.org/wiki/Voice_frequency">300 Hz to 3400 Hz</a>, if using a <a href="https://www.youtube.com/watch?v=PPKEpJEt_cM">half-wave dipole antenna</a> (for example), you would need an antenna of length between 40 km and 475 km to match such a signal&rsquo;s resonant frequency. That is completely unreasonable to do. So we have to transmit information using higher frequencies instead. That’s where modulation of high-frequency signals comes into the picture.</p>
+<div style="text-align: center;">
+<figure><img src="https://lowpowerlab.com/wp-content/uploads/2017/04/image22.jpg"
+    alt="A picture of a half-wave dipole antenna I found on the Internet" width="50%"><figcaption>
+      <p>A picture of a half-wave dipole antenna I found on the Internet</p>
+    </figcaption>
+</figure>
+
+</div>
+<h2 id="amplitude-modulation">Amplitude modulation</h2>
+<p><em>Amplitude modulation</em> is modulation of the carrier wave by varying its amplitude. How this works is best illustrated by simple example. Suppose we start with a plain sine wave. This wave carries no information (beyond its frequency and amplitude) since it’s just a plain sine wave. Indeed, if we take the Fourier transform of the unmodulated carrier wave, we get a single impulse corresponding to the single frequency in the wave.</p>
+<p>Hypothetically, what if we could control the amplitude of this wave, say between two values, 1 and 0.5? Then we could transmit bits using this convention: in a given time interval, any time we see an amplitude of 1, interpret it as a 1, and 0.5 for 0. Then we could transmit bits and hence information over the signal. Here&rsquo;s an example signal I made in <a href="https://en.wikipedia.org/wiki/Grapher">Grapher</a>, where peak amplitudes are 3 and 1, respectively (source file).</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/binary_am.png"
+    alt="An amplitude-modulated (AM) signal to transmit bits. Exact equation shown in figure" width="80%"><figcaption>
+      <p>An amplitude-modulated (AM) signal to transmit bits. Exact equation shown in figure</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>This particular method of modulation is very similar to <a href="https://www.open.edu/openlearn/digital-computing/exploring-communications-technology/content-section-1.4">on-off keying</a> (OOK), where in on-off keying, the lower amplitude is 0. OOK is used in digital signal modulation. Amplitude modulation is conceptually similar, but instead of varying the amplitude between two discrete values, we continuously vary the amplitude so that we can represent continuous signals.</p>
+<p>Here&rsquo;s a 10 Hz signal modulated by a 1 Hz signal. The purple curve shows 1 Hz pattern is called the modulated signal&rsquo;s <em>envelop</em>.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/simple_am_with_envelop.png"
+    alt="A 10 Hz signal amplitude-modulated with a 1 Hz signal. Envelop in purple." width="80%"><figcaption>
+      <p>A 10 Hz signal amplitude-modulated with a 1 Hz signal. Envelop in purple.</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>An amplitude-modulated wave supposedly contains redundant information. This is what I learned anyways as I studied for the amateur radio exam. I wanted to understand why this was and what this meant exactly, but the <a href="https://en.wikipedia.org/wiki/Single-sideband_modulation">Wikipedia page on SSB</a> felt too unapproacheable for me as someone lacking any RF background. So I went to YouTube looking for videos on SSB, and found <a href="https://www.youtube.com/watch?v=sv1xzlBut1I">this one</a> to be helpful in explaining what SSB is and what it does. It explains SSB in terms of an amplitude-modulated signal&rsquo;s two <em>sidebands</em>. And to understand what sidebands are, we need to review the Fourier transform.</p>
+<h3 id="fourier-transform-and-the-spectrum-of-a-signal">Fourier transform and the spectrum of a signal</h3>
+<p>Here&rsquo;s Wikipedia&rsquo;s first sentence on the Fourier transforms, which I think does a decent job at explaining what it is in just a single sentence:</p>
+<blockquote>
+<p>The Fourier transform is an integral transform that takes a function as input, and outputs another function that describes the extent to which various frequencies are present in the original function.</p>
+</blockquote>
+<p>The Fourier transform maps functions to other functions. In RF, an input function \( s \) to the Fourier transform is a signal in the <em>time domain</em>, whose graph&rsquo;s x axis is time and y axis is amplitude. The Fourier tranform maps a signal \( s \) represented in the time domain to its representation \( \hat{s} \) in the <em>frequency domain</em>, where the x axis is instead <em>frequency</em>, not time. \( \hat{s}(x) \) is generally complex-valued, so to visualize it, we&rsquo;ll plot \( |\hat{s}(x)| \). This is sometimes also called the <em>spectrum</em> of \( s \).</p>
+<p>Here&rsquo;s the definition of the Fourier transform:</p>
+$$ \hat{s}(\xi) = \displaystyle\int_{-\infty}^{\infty} s(x) e^{-i 2 \pi \xi x} dx $$<p>The Fourier transform of a pure sine wave (here, a 5 Hz wave) is a single impulse (<a href="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta</a>) in the frequency domain, as below:</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/sine_wave_fourier.png"
+    alt="A 5 Hz wave and its Fourier transform" width="80%"><figcaption>
+      <p>A 5 Hz wave and its Fourier transform</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>I <em>did</em> say above that we&rsquo;d see a single impulse, but there are actually <em>two</em> impulses. What gives?</p>
+<p>If \( s \) is real-valued (which we&rsquo;re assuming), then \( \hat{f} \) is a Hermitian function. In math-speak, that means:</p>
+$$ \hat{s}(-\xi) = \overline{\hat{s} (\xi)} $$<p>The proof of this is straightforward and can be written on a single line. This property of \( \hat{s} \) implies that \( | \hat{s} (-\xi) | = | \hat{s} (\xi) | \), or that \( |\hat{s}| \) is an even function, which gives us the symmetry about the y axis that we&rsquo;re seeing. It&rsquo;s usually only the positive spectrum that&rsquo;s plotted since, for real-valued fuctions, the negative spectrum is just the  mirror image of the positive spectrum (and it&rsquo;s unclear to me anyways whether <a href="https://dsp.stackexchange.com/questions/431/what-is-the-physical-significance-of-negative-frequencies">negative frequencies have a physical meaning</a>). Here we&rsquo;ve shown the full spectrum.</p>
+<h3 id="sidebands">Sidebands</h3>
+<p>Let&rsquo;s now look at the spectrum (both positive and negative frequencies) of an amplitude-modulated signal. Generally, given a message signal \( m(t) \) with \( |m(t)| \le 1 \), and a carrier wave whose frequency is \( f \) and amplitude \( A \), the signal obtained by amplitude-modulating the carrier by \( m \) is given by the following equation:</p>
+$$ s(t) = A (1 + \mu m(t)) \cos (2 \pi f t) $$<p>where \( 0 < \mu \le 1 \). Choosing \( A = 1 \), \( f = 40 \), and \( m(t) = \cos (2 \pi t) \), we get:</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/am_fourier.png"
+    alt="40 Hz wave modulated by 1 Hz wave using AM" width="80%"><figcaption>
+      <p>40 Hz wave modulated by 1 Hz wave using AM</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>There&rsquo;s still the symmetry about the y axis as expected, but each carrier impulse now also has two impulses on either side of it, at 39 Hz and at 41 Hz. We can see where these additional symmetries come from by taking the Fourier transform of the modulated signal \( s(t) \):</p>
+$$ \hat{s}(\xi) = \frac{A}{2} (\delta(\xi - f) + \delta(\xi + f)) + \frac{A}{2} (\hat{m}(\xi - f) + \hat{m}(\xi + f)) $$<p>I won&rsquo;t go over the details here, but \( \hat{s} \) can be computed by using linearity of the Fourier transform, and identity 115 <a href="https://en.wikipedia.org/wiki/Fourier_transform#Tables_of_important_Fourier_transforms">in this table of common transforms</a>. The lefthand summand are the carrier wave impulses, and the righthand summand the <em>four</em> impulses from the message signal \( m(t) \), whose Fourier transform is \( \hat{m} (\xi) = \delta(\xi - 1) + \delta(\xi + 1) \)</p>
+<p>From the equation above we can see the symmetry of \( \hat{s} \) about the frequency \( f \), regardless of whatever signal \( m \) we&rsquo;re given. Let&rsquo;s try another more messy signal.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/noisy_am_fourier.png"
+    alt="40 Hz wave modulated by a baseband given on the lefthand side" width="90%"><figcaption>
+      <p>40 Hz wave modulated by a baseband given on the lefthand side</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>In signal processing, the message signal \( m \) is also called the <em>baseband</em>. A  (frequency) <em>band</em> just refers to the interval of frequencies \( [f_{low}, f_{high} ] \) in the frequency domain, and its <em>bandwidth</em> is \( f_{high} - f_{low} \).</p>
+<p>The symmetry across positive and negative impluses is still obviously there. The band to the left of the carrier impulse is called the <em>lower sideband</em>, while band to the right is the <em>upper sideband</em>. The upper and lower sidebands are mirror images of one another, so in theory, we could send just one of them and reconstruct the original modulated signal from it. We could also cut out the carrier wave&rsquo;s impulse because it doesn&rsquo;t actually contain any information.</p>
+<p>This is exactly what single-sideband modulation does: only one sideband is transmitted.</p>
+<h2 id="single-sideband-modulation">Single-sideband modulation</h2>
+<p>In SSB, one of the sidebands is dropped since both sidebands have the same information. What does this mean in practice, though; how do we define a modulated signal whose Fourier transform is only one of the sidebands?</p>
+<p>One other thing I&rsquo;d also found confusing with SSB modulation is it being described as &ldquo;removing the carrier&rdquo;. I found this language to be confusing because I thought that the use of a high-frequency carrier to transmit information was the whole point of modulation, so then wouldn&rsquo;t &ldquo;removing the carrier&rdquo; (whatever that meant) defeat the purpose of modulation? Reading <a href="https://ham.stackexchange.com/questions/9761/why-are-carrier-waves-necessary">this answer</a> on the Amateur Radio Stack Exchange cleared up this confusion: in SSB, we remove the <em>frequency</em> of the carrier wave, but that frequency is still used to push the baseband into RF range so that it can be transmitted at RF wavelengths.</p>
+<p>For SSB, let&rsquo;s first visualize the spectrum we <em>want</em> our modulated signal to have. Below, we&rsquo;ve already removed the carrier impulse, the lower sideband is colored blue, and the upper sideband is colored red. We want SSB to produce a spectrum with the red curve <em>only</em>.</p>
+<div style="text-align: center;">
+<figure><img src="/blog/2025/12/29/the-math-of-single-sideband-modulation/ssb_spectrum_red_blue.png"
+    alt="40 Hz wave modulated by a baseband given on the lefthand side" width="70%"><figcaption>
+      <p>40 Hz wave modulated by a baseband given on the lefthand side</p>
+    </figcaption>
+</figure>
+
+</div>
+<p>So why not just compute the inverse Fourier transform of the upper sideband directly? The Fourier transform is an invertible linear operator (in fact, it&rsquo;s <a href="https://math.stackexchange.com/questions/1429086/prove-the-fourier-transform-is-a-unitary-linear-operator">unitary</a> <a href="https://en.wikipedia.org/wiki/Unitary_operator">for</a> <a href="https://en.wikipedia.org/wiki/Square-integrable_function">\( L^2 \) functions</a>). And we know the inverse will be real-valued because the red curve is symmetric about the y axis. There&rsquo;s nothing actually stopping us from doing this, so let&rsquo;s do it.</p>
+<p>From what I have read online, this is not conventionally how SSB is derived. I had a <a href="https://chatgpt.com/share/694a0bb3-de60-8000-b287-048d638c1082">long conversation with ChatGPT</a> to formulate my thoughts and figure out how precisely to do it this way. It seems like a correct approach to me. The conversation also mentions the <a href="https://en.wikipedia.org/wiki/Hilbert_transform">Hilbert transform</a>. More on that later.</p>
+<h2 id="the-derivation">The derivation</h2>
+<p>Let&rsquo;s assume an amplitude of \( 1 \) for simplicity. Let&rsquo;s also start with \( \hat{m}(\xi - f) \) since it is the upper and lower sidebands (sans the carrier impulse) in the positive spectrum of \( m \). We only want to reason about one sideband though. Let&rsquo;s pick the upper sideband. In the positive spectrum, this is \( \hat{m}(\xi - f)u(\xi -f ) \) where \( u \) is the <a href="https://en.wikipedia.org/wiki/Heaviside_step_function">Heaviside step function</a>. The step function is used to isolate only the sideband that we want.</p>
+<p>To ensure the inverse transform is real-valued, we need the function we&rsquo;re inverting to be even. Let&rsquo;s call the function we want to invert \( \hat{s}_{ssb} \). Then following definition is forced, since we want \( s_{ssb} \) to be real-valued (so \( \hat{s}_{ssb} \) is Hermitian):</p>
+$$ \hat{s}_{ssb}(\xi) = \hat{m}(\xi - f)u(\xi - f ) + \overline{\hat{m}(-\xi - f)}u(- \xi -f ) $$<p>This is because we need \( \hat{s}_{ssb}(\xi) = -\overline{\hat{s}_{ssb}(-\xi)} \) to hold. For convenience let&rsquo;s just call \( A(\xi) = \hat{m}(\xi - f)u(\xi -f ) \). The inverse Fourier transform of \( \hat{s}_{ssb}(\xi) \) is given by:</p>
+$$ s_{ssb}(t) = \dfrac{1}{2 \pi} \int_{-\infty}^\infty \left [ A(\xi) + \overline{A(-\xi)} \right ] e^{i \xi t} d \xi = \dfrac{1}{2 \pi} \int_{-\infty}^\infty A(\xi) e^{i \xi t} d \xi + \dfrac{1}{2 \pi} \int_{-\infty}^\infty \overline{A(-\xi)} e^{i \xi t} d \xi $$<p>Call the lefthand term above \( x(t) \). Making the subsitution \( \omega = -\xi \), the righthand term above can be rewritten:</p>
+$$ \dfrac{1}{2 \pi} \int_{-\infty}^\infty \overline{A(-\xi)} e^{i \xi t} d \xi = \dfrac{1}{2 \pi} \int_{\infty}^{-\infty} - \overline{A(\omega)} e^{-i \omega t} d \omega = \dfrac{1}{2 \pi} \overline{ \int_{-\infty}^{\infty} A(\omega) e^{i \omega t} d \omega } = \overline{ x(t) }$$<p>So:</p>
+$$ s_{ssb}(t) = x(t) + \overline{ x(t) } = 2 \Re (x(t))$$<p>where <a href="https://mathworld.wolfram.com/RealPart.html">\( \Re \)</a> is the real part of a complex number.</p>
+<h3 id="the-analytic-signal">The analytic signal</h3>
+<p>The next step is to define the <em>analytic spectrum</em> of \( m \), which we&rsquo;ll denote as \( M_a \):</p>
+$$ M_a(\xi) = 2 u(\xi)M(\xi) $$<p>By applying a step function, \( M_a \) kills off all negative frequencies of \( m \). So the inverse transform of \( M_a \), the signal \( m_a \) called the <em>analytic signal</em> of \( m \) has a spectrum will no negative frequencies, but it is complex-valued. If you&rsquo;ve taken courses in complex analysis like I have, you might recognize the term &ldquo;analytic&rdquo; as in a <a href="https://en.wikipedia.org/wiki/Holomorphic_function">complex analytic (or holomorphic) function</a> and wonder <em>why</em> \( m_a \) is called the <em>analytic</em> signal. There is apparently a <a href="https://dsp.stackexchange.com/a/89572/90141">relationship between the analytic signal and holomorphic functions</a>, but I won&rsquo;t explore it in this blog post.</p>
+<p>Let&rsquo;s compute \( m_a \) by applying the definition of the inverse Fourier transform:</p>
+$$ m_a(t) = \dfrac{1}{2 \pi} \int_{-\infty}^\infty M_a(\xi) e^{i \xi t} d \xi = \dfrac{1}{2 \pi} \int_{0}^\infty 2 \hat{m}(\xi) e^{i \xi t} d \xi = \dfrac{1}{\pi} \int_{0}^\infty \hat{m}(\xi) e^{i \xi t} d \xi $$<p>Now let&rsquo;s rewrite \( x(t) \) so that it is expressible in terms of \( m_a (t) \), making the substitution \( \omega = \xi - f \):</p>
+$$ x(t)
+= \frac{1}{2\pi} \int_{-\infty}^{\infty}
+\hat{m}(\xi - f)\, u(\xi - f)\, e^{i \xi t}\, d\xi
+= \frac{1}{2\pi} \int_{f}^{\infty}
+\hat{m}(\xi - f)\, e^{i \xi t}\, d\xi
+= \dfrac{1}{2\pi} e^{ift} \int_0^\infty \hat{m}(\xi) e^{i\xi t} d \xi
+= \dfrac{1}{2} m_a(t) e^{ift} $$<p>Therefore:</p>
+$$ s_{ssb}(t) = \Re (m_a(t) e^{ift}) $$<h3 id="the-hilbert-transform">The Hilbert transform</h3>
+<p>Since \( 2u(\xi) = 1 + \text{sgn}(\xi) \), we can write \( m_a \) as follows:</p>
+$$ m_a(t) = \dfrac{1}{2 \pi} \int_{-\infty}^\infty (1 + \text{sgn}(\xi)) \hat{m}(\xi) e^{i\xi t} d \xi = m(t) + \dfrac{1}{2 \pi} \int_{-\infty}^\infty \text{sgn}(\xi) \hat{m}(\xi) e^{i \xi t} d \xi $$<p>The term in square brackets is called the <em>Hilbert transform</em> of \( m \), though this is not typically the expression used to define it. We&rsquo;ll derive the typical definition from this.</p>
+<p>Notice the expression \( \dfrac{1}{2 \pi} \int_{-\infty}^\infty \text{sgn}(\xi) \hat{m}(\xi) e^{i \xi t} d \xi \) is the inverse transform \( \mathcal{F}^{-1} (\text{sgn} \cdot \hat{m}) \). <a href="https://en.wikipedia.org/wiki/Convolution_theorem">The inverse transform of a product is the convolution of inverse transforms</a>, so this is \( \mathcal{F}^{-1} (\text{sgn}) * \mathcal{F}^{-1} (\hat{m}) = \mathcal{F}^{-1} (\text{sgn}) * m \).</p>
+<p>We won&rsquo;t compute \( \mathcal{F}^{-1} (\text{sgn}) \) since it requires complex analyis that is a bit out of scope here. ChatGPT is able to generate a correct <a href="https://chatgpt.com/share/6950b342-5ffc-8000-9c2c-95ffe583ad5f">proof of its derivation</a>. It requires an understanding of <a href="https://en.wikipedia.org/wiki/Distribution_(mathematical_analysis)#Tempered_distribution">tempered distributions</a> (of which the Dirac delta function is one) and <a href="https://en.wikipedia.org/wiki/Cauchy_principal_value">Cauchy principal values</a>. We&rsquo;ll refer to <a href="https://en.wikipedia.org/wiki/Fourier_transform#Distributions,_one-dimensional">this table</a> for determining \( \mathcal{F}^{-1} (\text{sgn}) \); it is \( \dfrac{i}{\pi} \text{PV} \left( \dfrac{1}{t} \right ) \), where PV refers to the Cauchy principal value. Convolving with \( m \), and unraveling the definition of the convolution:</p>
+$$ (\mathcal{F}^{-1} (\text{sgn}) * m)(t) = \dfrac{i}{\pi} \text{PV} \left( \dfrac{1}{t} * m \right ) 
+= \dfrac{i}{\pi} \text{PV} \left( \int_{-\infty}^\infty \dfrac{m(\tau)}{t - \tau} d\tau \right)
+= i \left [ \dfrac{1}{\pi} \text{PV} \left( \int_{-\infty}^\infty \dfrac{m(\tau)}{t - \tau} d\tau \right) \right ] $$<p>The expression in the square brackets is how the Hilbert transform \( \mathcal{H}(m) \) is defined. So returning to the expression for \( m_a \), we&rsquo;ve got:</p>
+$$ m_a(t) = m(t) + i\mathcal{H}(m)(t) $$<p>So then:</p>
+$$ s_{ssb}(t) = \Re ( \left [ m(t) + i\mathcal{H}(m)(t) \right ] e^{ift} ) $$<p>Finally, using <a href="https://mathworld.wolfram.com/EulerFormula.html">Euler&rsquo;s formula</a>:</p>
+$$ s_{ssb}(t) = \Re ( \left [ m(t) + i\mathcal{H}(m)(t) \right ] \cdot [\cos(ft) + i\sin(ft)] ) = m(t)\cos(ft) - \mathcal{H}(m)(t)\sin(ft) $$<p>This is general expression for a carrier wave of frequency \( f \) modulated with single-sideband modulation. The Wikipedia article on the Hilbert transform has a <a href="https://en.wikipedia.org/wiki/Hilbert_transform#Table_of_selected_Hilbert_transforms">table of common transformations</a>.</p>
+<h3 id="can-we-simplify-this-derivation">Can we simplify this derivation?</h3>
+<p>Most of the content I found online about SSB either wasn&rsquo;t self-contained enough to explain the full derivation of SSB, or wasn&rsquo;t mathematically rigorous enough for my liking. Furthermore, I felt that the analytic signal and Hilbert transform were introduced as concepts without motivating <em>why</em> we care about them.</p>
+<p>In the proof I&rsquo;ve written here, I started with computing the inverse Fourier transform of the desired spectrum from the outset, and then defined the analytic signal and the Hilbert transform as they appeared naturally in the computation of the inverse transform. In my opinion, the proof can be further shortened if we don&rsquo;t really care about mentioning these two concepts. But I wanted to do it this way since it helped me better understand a few important topics that appear in signal processing. I&rsquo;ve outlined all the steps you need here for a complete and accurate proof, while also mentioning the analytic signal and the Hilbert transform, but I unfortunately think the proof is a lot of algebraic and symbolic manipulation without much intuition. If I find opportunity to add intuition to the proof itself, I&rsquo;ll update this post.</p>
+<p>This all being said, I liked <a href="https://www.comm.utoronto.ca/~frank/notes/hilbert.pdf">this document</a> on the Hilbert transform which also defines and derives the expression for SSB.</p>
+<h2 id="et-cetera-including-use-of-ai"><em>Et cetera (including use of AI)</em></h2>
+<p>This post covers only the mathematics of single-sideband modulation. It does not cover how it&rsquo;s <em>implemented</em> in circuitry. I&rsquo;d probably have to get into the physics and electronics of modulation, which I&rsquo;m not qualified to do (yet anyways). From what I&rsquo;ve read so far though, <a href="https://en.wikipedia.org/wiki/Frequency_mixer">mixers</a> are used in signal modulation.</p>
+<p>Generally speaking, using AI (ChatGPT) helped me understand SSB. It generated Python scipts, helped explain intuition, and wrote some proofs. It still made mistakes with proofs, often times making subtle errors or weird assumptions. That&rsquo;s why I still tried to manually verify each detail and write up my own proof.</p>
+<p>I wrote several Python scripts to create the matplotlib figures in this post. I didn&rsquo;t include them in this post because I think their source code is mostly a distraction, but in the interest of open-sourcing things that I do, I uploaded them all here. I used single-shot prompting with ChatGPT to do this, but I did try to read the generated code, mainly ensuring that I know what each one is doing. In the process of doing this (though I ended up not using), I also learned of the <a href="https://docs.scipy.org/doc/scipy/tutorial/signal.html">scipy.signals</a> package. SciPy has lots of cool applied math stuff.</p>
+<p>These Python scripts used the <a href="https://numpy.org/doc/stable/reference/routines.fft.html">fast Fourier transform (FFT) from NumPy</a>. <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT algorithms</a> are fast implementations of the <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</a> (DFT), which is like a discrete version of the Fourier transform that operates on finite sequences. Obviously, when making plots, we can&rsquo;t actually work with continuous functions, we can only sample points from them. The DFT lets us work with discrete sets of points, which is okay, since the DFT does <a href="https://en.wikipedia.org/wiki/Convergence_of_Fourier_series">converge</a> to the Fourier transform in some sense.</p>
+<p>Single-sideband modulation is <a href="https://en.wikipedia.org/wiki/Signal_modulation#/media/File:Modulation_categorization.svg">just one</a> of many approaches to signal modulation. It&rsquo;s used in amateur radio to transmit analog data over an analog signal, but it&rsquo;s also used by WiFi (for example) to transmit digital data over an analog signal. <a href="https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation">Quadrature amplitude modulation</a> (QAM) is used to transmit data over WiFi signals. <a href="https://en.wikipedia.org/wiki/Modem">&ldquo;Modem&rdquo;</a> stands for modulator-demodulator, because one of the functions of a modem is literally to modulate and demodulate signals. Who knew. There&rsquo;s a lot of other interesting math (and visuals) in QAM that I&rsquo;d like to explore in another blog post.</p>
+<p>You probably don&rsquo;t need all these mathematical details to get even an <a href="https://www.arrl.org/upgrading-to-an-extra-license">amateur extra license</a>, the most advanced of amateur radio licenses. I&rsquo;m just shooting for an technician&rsquo;s for the time being. There&rsquo;s a nice website, <a href="https://hamstudy.org/">hamstudy.org</a>, that gives you free access to practice exams. And their mobile app is only $4. I&rsquo;ve signed up for an exam in early 2026; wish me luck.</p>
+ </main>
+</div>
+
+<footer>
+  <div class="footer-links">
+    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2025
+    &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
+    <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
+    <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script
+    src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js"
+    defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+</div>
+</footer>
+</body>
+
+</html>
