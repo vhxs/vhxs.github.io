@@ -201,7 +201,7 @@ In the proof I've written here, I started with computing the inverse Fourier tra
 
 This all being said, I liked [this document](https://www.comm.utoronto.ca/~frank/notes/hilbert.pdf) on the Hilbert transform which also defines and derives the expression for SSB.
 
-## _Et cetera (including use of AI)_
+## _Et cetera_ (including use of AI)
 
 This post covers only the mathematics of single-sideband modulation. It does not cover how it's _implemented_ in circuitry. I'd probably have to get into the physics and electronics of modulation, which I'm not qualified to do (yet anyways). From what I've read so far though, [mixers](https://en.wikipedia.org/wiki/Frequency_mixer) are used in signal modulation.
 
