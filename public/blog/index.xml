@@ -2,45 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog posts on Vikram Saraph</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://vikramsaraph.com/blog/</link>
     <description>Recent content in Blog posts on Vikram Saraph</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vikramsaraph.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Puzzlehunts</title>
+      <link>https://vikramsaraph.com/blog/2026/04/01/puzzlehunts/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://vikramsaraph.com/blog/2026/04/01/puzzlehunts/</guid>
+      <description>&lt;p&gt;Our team, &lt;a href=&#34;https://www.puzzles.wiki/wiki/Team_Providence&#34;&gt;Team Providence&lt;/a&gt; (this year named The Providence Bureau of Invest-Egg-Ations), won the MIT Mystery Hunt! Yay, that means we get to write next year&amp;rsquo;s hunt (which will be lots of work, but also a unique experience!). Incidentally, this post is part of the &lt;a href=&#34;https://www.aprilcools.club/&#34;&gt;April Cools&lt;/a&gt; blog series for 2026.&lt;/p&gt;&#xA;&lt;p&gt;Now, I&amp;rsquo;m not sure many of these words actually make sense to most of my readers yet, so this post is all about what puzzle hunts are, which ones I&amp;rsquo;ve been involved with, and my experience with the MIT Mystery Hunt in particular.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Math of Single-sideband Modulation</title>
-      <link>http://localhost:1313/blog/2025/12/29/the-math-of-single-sideband-modulation/</link>
+      <link>https://vikramsaraph.com/blog/2025/12/29/the-math-of-single-sideband-modulation/</link>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2025/12/29/the-math-of-single-sideband-modulation/</guid>
+      <guid>https://vikramsaraph.com/blog/2025/12/29/the-math-of-single-sideband-modulation/</guid>
       <description>&lt;p&gt;I wrote this post as I learned about signal modulation while studying for getting a &lt;a href=&#34;https://www.arrl.org/getting-your-technician-license&#34;&gt;Technician amateur radio license&lt;/a&gt;. &lt;a href=&#34;https://www.hamradioschool.com/post/understanding-single-sideband-ssb&#34;&gt;Single-sideband modulation&lt;/a&gt; (SSB for short) is just one of a handful of &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_amateur_radio_modes&#34;&gt;modes&lt;/a&gt; of transmitting information by amateur radio, though I initially found the math of it to be confusing.&lt;/p&gt;&#xA;&lt;p&gt;So did some digging around on the Internet to resolve my confusion. This blog post is the result of that digging. &lt;strong&gt;As a disclaimer&lt;/strong&gt;: neither my professional nor educational background is in RF or electrical engineering. But I&amp;rsquo;ve always had an interest in electronics and I do have the math background to understand some of the nuances to write about it. If there is anything misstated here, please feel free to reach out over any one of my many social media accounts, and I will correct any mistakes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Visualizing the Algebraic Numbers</title>
-      <link>http://localhost:1313/blog/2025/05/26/visualizing-the-algebraic-numbers/</link>
+      <link>https://vikramsaraph.com/blog/2025/05/26/visualizing-the-algebraic-numbers/</link>
       <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2025/05/26/visualizing-the-algebraic-numbers/</guid>
+      <guid>https://vikramsaraph.com/blog/2025/05/26/visualizing-the-algebraic-numbers/</guid>
       <description>&lt;h2 id=&#34;what-are-the-algebraic-numbers&#34;&gt;What are the Algebraic Numbers?&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://mathworld.wolfram.com/AlgebraicNumber.html&#34;&gt;algebraic numbers&lt;/a&gt; are complex numbers that are solutions of polynomial equations with integer coefficients. For example, \(\sqrt{2} \) is algebraic because it satisfies \( x^2 - 2 = 0 \), while the number \( \pi \) is not algebraic (it&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Transcendental_number&#34;&gt;transcendental&lt;/a&gt;) since it&amp;rsquo;s not a root of any integer polynomial you can imagine. They form a subfield of the complex numbers, so they&amp;rsquo;re closed under addition, subtraction, multiplication, and division. Furthermore, the rational numbers are a subfield of the algebraic numbers, since the rational number \( a / b \) is a root of the linear integer polynomial \( bx - a = 0 \).&lt;/p&gt;</description>
     </item>
     <item>
       <title>An OEIS Sequence</title>
-      <link>http://localhost:1313/blog/2025/01/29/an-oeis-sequence/</link>
+      <link>https://vikramsaraph.com/blog/2025/01/29/an-oeis-sequence/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2025/01/29/an-oeis-sequence/</guid>
+      <guid>https://vikramsaraph.com/blog/2025/01/29/an-oeis-sequence/</guid>
       <description>&lt;h2 id=&#34;what-is-oeis&#34;&gt;What is OEIS?&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://oeis.org/&#34;&gt;On-Line Encyclopedia of Integer Sequences&lt;/a&gt; (OEIS) is exactly what it &lt;a href=&#34;https://oeis.org/listen.html&#34;&gt;sounds&lt;/a&gt; like: it’s a searchable database of interesting number sequences. It’s used by math researchers to discover sequences that they might encounter during their research, and it can help them find other related sequences or relevant citations to published papers. Each entry in OEIS consists of several terms in the sequence, along with other associated data, like formulas or recurrence relations that define the sequence, programs that generate the sequence, and references to related OEIS sequences. &lt;a href=&#34;https://oeis.org/A000045&#34;&gt;Here&amp;rsquo;s the entry&lt;/a&gt; for the Fibonacci sequence. You can read more about OEIS on their &lt;a href=&#34;https://oeis.org/FAQ.html&#34;&gt;FAQ page&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Setting up a Website with Hugo</title>
-      <link>http://localhost:1313/blog/2024/12/29/setting-up-a-website-with-hugo/</link>
+      <link>https://vikramsaraph.com/blog/2024/12/29/setting-up-a-website-with-hugo/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024/12/29/setting-up-a-website-with-hugo/</guid>
+      <guid>https://vikramsaraph.com/blog/2024/12/29/setting-up-a-website-with-hugo/</guid>
       <description>&lt;h2 id=&#34;blogging-and-static-site-generators&#34;&gt;Blogging and static site generators&lt;/h2&gt;&#xA;&lt;p&gt;Yes, I have a website and an online presence. My first incarnation of a (Wordpress) &lt;a href=&#34;https://markivikram.wordpress.com/about&#34;&gt;blog&lt;/a&gt; from 2013 is still out there living on the Internet; it was named after &lt;a href=&#34;https://en.wikipedia.org/wiki/Constructible_universe&#34;&gt;Gödel’s constructible universe&lt;/a&gt; since I was obsessed with the foundations of mathematics when studying theoretical computer science at that time.&lt;/p&gt;&#xA;&lt;p&gt;This post is going to read like a diary entry for how I set up a blog-ready website.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spindown Dice</title>
-      <link>http://localhost:1313/blog/2024/10/14/spindown-dice/</link>
+      <link>https://vikramsaraph.com/blog/2024/10/14/spindown-dice/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2024/10/14/spindown-dice/</guid>
+      <guid>https://vikramsaraph.com/blog/2024/10/14/spindown-dice/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently been dabbling in Magic: The Gathering. &lt;a href=&#34;https://www.technologyreview.com/2019/05/07/135482/magic-the-gathering-is-officially-the-worlds-most-complex-game/&#34;&gt;It&amp;rsquo;s a hard game&lt;/a&gt; with a long history and a ton of cards. In Magic, players often use 20-sided dice, or d20s, to decrement (or increment) counters that track numbers in the game such as life points. An ordinary d20 doesn&amp;rsquo;t have consecutive numbers adjacent to one another, which makes it inconvenient to use for counting, so spindown d20s were invented. These dice do have consecutive numbers appearing next to one another, so that players can easily decrement or increment counters using these dice. &lt;a href=&#34;https://diceenvy.com/blogs/news/what-are-spindown-dice-what-makes-them-different-and-why-does-it-matter?srsltid=AfmBOorWAOSs1xmutiEEF22WPDcBli_ps5Zg_uZKzm28AuDwHrR-KkFP&#34;&gt;This blog post&lt;/a&gt; talks more about spindown d20s.&lt;/p&gt;</description>
     </item>
   </channel>

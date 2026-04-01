@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error Correction Codes on Vikram Saraph</title>
+    <link>http://localhost:1313/tags/error-correction-codes/</link>
+    <description>Recent content in Error Correction Codes on Vikram Saraph</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/error-correction-codes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MIT Mystery Hunt 2026 Brain Dump</title>
+      <link>http://localhost:1313/blog/2026/01/19/mit-mystery-hunt-2026-brain-dump/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/01/19/mit-mystery-hunt-2026-brain-dump/</guid>
+      <description>&lt;h2&gt;&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Math of Single-sideband Modulation | Vikram Saraph</title>
@@ -182,12 +182,14 @@ $$ s_{ssb}(t) = \Re ( \left [ m(t) + i\mathcal{H}(m)(t) \right ] \cdot [\cos(ft)
 <p>These Python scripts used the <a href="https://numpy.org/doc/stable/reference/routines.fft.html">fast Fourier transform (FFT) from NumPy</a>. <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT algorithms</a> are fast implementations of the <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</a> (DFT), which is like a discrete version of the Fourier transform that operates on finite sequences. Obviously, when making plots, we can&rsquo;t actually work with continuous functions, we can only sample points from them. The DFT lets us work with discrete sets of points, which is okay, since the DFT does <a href="https://en.wikipedia.org/wiki/Convergence_of_Fourier_series">converge</a> to the Fourier transform in some sense.</p>
 <p>Single-sideband modulation is <a href="https://en.wikipedia.org/wiki/Signal_modulation#/media/File:Modulation_categorization.svg">just one</a> of many approaches to signal modulation. It&rsquo;s used in amateur radio to transmit analog data over an analog signal, but it&rsquo;s also used by WiFi (for example) to transmit digital data over an analog signal. <a href="https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation">Quadrature amplitude modulation</a> (QAM) is used to transmit data over WiFi signals. <a href="https://en.wikipedia.org/wiki/Modem">&ldquo;Modem&rdquo;</a> stands for modulator-demodulator, because one of the functions of a modem is literally to modulate and demodulate signals. Who knew. There&rsquo;s a lot of other interesting math (and visuals) in QAM that I&rsquo;d like to explore in another blog post.</p>
 <p>You probably don&rsquo;t need all these mathematical details to get even an <a href="https://www.arrl.org/upgrading-to-an-extra-license">amateur extra license</a>, the most advanced of amateur radio licenses. I&rsquo;m just shooting for an technician&rsquo;s for the time being. There&rsquo;s a nice website, <a href="https://hamstudy.org/">hamstudy.org</a>, that gives you free access to practice exams. And their mobile app is only $4. I&rsquo;ve signed up for an exam in early 2026; wish me luck.</p>
+<p><strong>Update 2/20/2026</strong>: I passed! I got 33 out of 35 questions right. My assigned call sign is KD3CON, which I might leave as is since it almost looks like a vanity choice.</p>
+<p>Among many other tips, I learned from the amateur radio club at my workplace of this discounted, HT (handheld transciever VHF/UHF radio that GigaParts offers through <a href="https://www.qrz.com/jumpstart/account-required">qrz.com</a>. It&rsquo;s only $18 plus shipping. As far as I can tell, all you need to qualify for this offer is to have received your license for the first time in the last 6 months.</p>
  </main>
 </div>
 
 <footer>
   <div class="footer-links">
-    &copy; <a href="http://localhost:1313/"> Vikram Saraph</a> &nbsp; 2024 - 2025
+    &copy; <a href="https://vikramsaraph.com/"> Vikram Saraph</a> &nbsp; 2024 - 2026
     &nbsp; <a href="https://www.linkedin.com/in/vsaraph/"><i class="fa-brands fa-linkedin" style="font-size:24px"></i></a>
     <a href="https://github.com/vhxs/"><i class="fa-brands fa-github" style="font-size:24px"></i></a>
     <a href="https://bsky.app/profile/vikramsaraph.com/"><i class="fa-brands fa-bluesky" style="font-size:24px"></i></a>
